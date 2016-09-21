@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0119)file:///C:/Users/svalukhina-yua/Desktop/Form/index.html?login_tv=&tp_tv=&package_tv=&date=&login_internet=&tp_internet= -->
+<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Форма</title>
+    <meta charset="utf-8">
+    <link href="file:///C:/Users/svalukhina-yua/Desktop/Form/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <form id="form">
+      <table>
+        <tbody><tr>
+          <td></td>
+          <td>Логин</td>
+          <td>ТП</td>
+          <td>Пакет</td>
+          <td>Дата</td>
+        </tr>
+        <tr>
+          <td>ТВ</td>
+          <td>
+            <input type="text" name="login_tv" id="login_tv">
+          </td>
+          <td>
+            <input type="text" name="tp_tv" id="tp_tv">
+          </td>
+          <td>
+            <input type="text" name="package_tv" id="package_tv" value="51883">
+          </td>
+          <td>
+            <input type="date" name="date" id="date">
+          </td>
+        </tr>
+        <tr>
+          <td>Интернет</td>
+          <td>
+            <input type="text" name="login_internet" id="login_internet">
+          </td>
+          <td colspan="3">
+            <input type="text" name="tp_internet" id="tp_internet">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="button" name="btn_result" id="btn_result" value="OK">
+          </td>
+          <td colspan="4">
+            <input type="text" name="result_text" id="result_text" value="Result..." disabled="">
+          </td>
+        </tr>
+      </tbody></table>
+      <!-- форма с добавлением полей -->
+      <div class="wrapper">
+        <span class="title">Ответственные в филиалах</span>
+        <ul id="list" class="list">
+          <li>
+            <input type="text" name="elem1" value="ЕФ: Ложкина, Макарова" disabled="">
+          </li>
+        <li><input disabled="disabled"></li>
+        <li><input disabled="disabled"></li>
+        <li><input disabled="disabled"></li>
+        <li><input disabled="disabled"></li>
+      <li><input disabled="disabled" value="l"></li><li><input disabled="disabled" value="li"></li></ul>
+        <input type="text" name="new_value" id="new_value">
+        <input type="button" name="btn_add" id="btn_add" value="Добавить">
+      </div>
+    </form>
+    <script>
+      var form = document.getElementById("form"),
+          login_tv = document.getElementById("login_tv"),
+          tp_tv = document.getElementById("tp_tv"),
+          tp_internet = document.getElementById("tp_internet"),
+          package_tv = document.getElementById("package_tv"),
+          result_text = document.getElementById("result_text"),
+          date = document.getElementById("date"),
+          btn_result = document.getElementById("btn_result");
+
+    btn_result.addEventListener("click", function(){
+      result_text.value = "В Лире на устр. " + login_tv.value + " прописан ТП " + tp_tv.value + " и абонплата " + package_tv.value + ", на устр. " + login_internet.value + " -  ТП " + tp_internet.value;
+      if (date.value) result_text.value = result_text.value + " с " + date.value;
+    });
+    </script>
+    <script>
+      var new_value = document.getElementById("new_value"),
+          btn_add = document.getElementById("btn_add");
+          list = document.getElementById("list");
+
+      btn_add.addEventListener("click", function(){
+        var li = document.createElement("li"),
+            input = document.createElement("input");
+
+        input.setAttribute("disabled", "disabled");
+        input.setAttribute("value", new_value.value);
+        li.appendChild(input);
+        list.appendChild(li);
+      });
+
+      inputs = list.getElementsByTagName("input");
+      for (var i=0; i<inputs.length; i++) {
+        inputs[i].parentNode.addEventListener("dblclick", function(){
+          this.removeAttribute("disabled");
+        });
+      }
+    </script>
+
+
+
+
+</body></html>
