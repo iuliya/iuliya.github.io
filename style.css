@@ -1,19 +1,29 @@
-input[name="result_text"] {
-  width: 100%;
-  height: 100%;
-    word-break: break-word;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+
+  font-family: monospace;
+  color: #ccc;
 }
 
+.content{
+  width: 1120px;
+  margin: 0 auto;
+  padding-top: 355px;
 
-.wrapper {
-  margin-top: 10px;
-  border-top: 1px dotted black;
-}
-.title {
-  font-weight: bold;
+  background-image: url("img/fon.jpg");
+  background-repeat: no-repeat;
 }
 
-.list input:disabled {
-  background: none;
-  border: none;
+.filter_item {
+  display: block;
+}
+
+.filter {
+  /*float: left;*/
+}
+
+.information {
+  /*float: right;*/
 }

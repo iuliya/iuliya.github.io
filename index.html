@@ -1,108 +1,261 @@
 <!DOCTYPE html>
-<!-- saved from url=(0119)file:///C:/Users/svalukhina-yua/Desktop/Form/index.html?login_tv=&tp_tv=&package_tv=&date=&login_internet=&tp_internet= -->
-<html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Форма RTK</title>
+<html>
+  <head>
     <meta charset="utf-8">
-    <link href="file:///C:/Users/svalukhina-yua/Desktop/Form/style.css" rel="stylesheet">
+    <title>Классификация</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form id="form">
-      <table>
-        <tbody><tr>
-          <td></td>
-          <td>Логин</td>
-          <td>ТП</td>
-          <td>Пакет</td>
-          <td>Дата</td>
-        </tr>
-        <tr>
-          <td>ТВ</td>
-          <td>
-            <input type="text" name="login_tv" id="login_tv">
-          </td>
-          <td>
-            <input type="text" name="tp_tv" id="tp_tv">
-          </td>
-          <td>
-            <input type="text" name="package_tv" id="package_tv" value="51883">
-          </td>
-          <td>
-            <input type="date" name="date" id="date">
-          </td>
-        </tr>
-        <tr>
-          <td>Интернет</td>
-          <td>
-            <input type="text" name="login_internet" id="login_internet">
-          </td>
-          <td colspan="3">
-            <input type="text" name="tp_internet" id="tp_internet">
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="button" name="btn_result" id="btn_result" value="OK">
-          </td>
-          <td colspan="4">
-            <input type="text" name="result_text" id="result_text" value="Result..." disabled="">
-          </td>
-        </tr>
-      </tbody></table>
-      <!-- форма с добавлением полей -->
-      <div class="wrapper">
-        <span class="title">Ответственные в филиалах</span>
-        <ul id="list" class="list">
-          <li>
-            <input type="text" name="elem1" value="ЕФ: Ложкина, Макарова" disabled="">
-          </li>
-        <li><input disabled="disabled"></li>
-        <li><input disabled="disabled"></li>
-        <li><input disabled="disabled"></li>
-        <li><input disabled="disabled"></li>
-      <li><input disabled="disabled" value="l"></li><li><input disabled="disabled" value="li"></li></ul>
-        <input type="text" name="new_value" id="new_value">
-        <input type="button" name="btn_add" id="btn_add" value="Добавить">
-      </div>
-    </form>
-    <script>
-      var form = document.getElementById("form"),
-          login_tv = document.getElementById("login_tv"),
-          tp_tv = document.getElementById("tp_tv"),
-          tp_internet = document.getElementById("tp_internet"),
-          package_tv = document.getElementById("package_tv"),
-          result_text = document.getElementById("result_text"),
-          date = document.getElementById("date"),
-          btn_result = document.getElementById("btn_result");
+    <main class="content">
+    <div class="filter">
+      <label class="filter_item" id="direction">Направление<br/>
+        <input type="radio" name="direction" value="tpl" checked>ТПЛ
+        <input type="radio" name="direction" value="tpr">ТПР
+      </label>
+      <label class="filter_item" id="system">ИС<br/>
+        <input type="radio" name="system" value="lira" checked>Лира
+        <input type="radio" name="system" value="eissd">ЕИССД
+        <input type="radio" name="system" value="hpsa">HPSA
+        <input type="radio" name="system" value="sdp">SDP
+        <input type="radio" name="system" value="ekm">ЕКМ
+      </label>
+      <label class="filter_item" id="category">Категория<br/>
+        <input type="radio" name="category" value="zo" checked>ЗО
+        <input type="radio" name="category" value="vp">ВП
+        <input type="radio" name="category" value="in">ИН
+      </label>
+      <label class="filter_item" id="classification">Классификация<br/>
+        <input type="radio" name="classification" value="setup" checked>установка
+        <input type="radio" name="classification" value="remove">снятие
+        <input type="radio" name="classification" value="access">доступ
+        <input type="radio" name="classification" value="ko">КО
+        <input type="radio" name="classification" value="other">другое
+      </label>
+      <button type="button">OK</button>
+    </div>
 
-    btn_result.addEventListener("click", function(){
-      result_text.value = "В Лире на устр. " + login_tv.value + " прописан ТП " + tp_tv.value + " и абонплата " + package_tv.value + ", на устр. " + login_internet.value + " -  ТП " + tp_internet.value;
-      if (date.value) result_text.value = result_text.value + " с " + date.value;
-    });
-    </script>
-    <script>
-      var new_value = document.getElementById("new_value"),
-          btn_add = document.getElementById("btn_add");
-          list = document.getElementById("list");
+    <div class="information">
+      <ul id="tpl_lira_zo_setup">
+        <li>ТПЛ:ЛИРА:ЗО:установка СОП.</li>
+        <li>ТПЛ:ЛИРА:ЗО:установка СПД.</li>
+        <li>ТПЛ:ЛИРА:ЗО:установка ДБ.</li>
+        <li>ТПЛ:ЛИРА:ЗО:установка пакета.</li>
+        <li>ТПЛ:ЛИРА:ЗО:установка аб/пл.</li>
+      </ul>
+      <ul id="tpl_lira_zo_remove">
+        <li>ТПЛ:ЛИРА:ЗО:снятие СОП.</li>
+        <li>ТПЛ:ЛИРА:ЗО:снятие СПД.</li>
+        <li>ТПЛ:ЛИРА:ЗО:снятие ДБ.</li>
+        <li>ТПЛ:ЛИРА:ЗО:снятие пакета.</li>
+        <li>ТПЛ:ЛИРА:ЗО:снятие аб/пл.</li>
+      </ul>
+      <ul id="tpl_lira_zo_other">
+        <li>ТПЛ:ЛИРА:ЗО:смена технологии.</li>
+        <li>ТПЛ:ЛИРА:ЗО:перестановка.</li>
+        <li>ТПЛ:ЛИРА:ЗО:пакет ДРЦ.</li>
+        <li>ТПЛ:ЛИРА:ЗО:смена ТП.</li>
+        <li>ТПЛ:ЛИРА:ЗО:пакетная загрузка нарядов.</li>
+        <li>ТПЛ:ЛИРА:ЗО:выгрузка данных.</li>
+        <li>ТПЛ:ЛИРА:ЗО:загрузка информации.</li>
+        <li>ТПЛ:ЛИРА:ЗО:изменение реквизитов.</li>
+        <li>ТПЛ:ЛИРА:ЗО:аннулирование нарядов.</li>
+        <li>ТПЛ:ЛИРА:ЗО:консультирование.</li>
+      </ul>
+      <ul id="tpl_lira_zo_ko">
+        <li>ТПЛ:ЛИРА:ЗО:КО продажа.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО продажа в рассрочку.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО выдача в аренду.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО возврат.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО возврат из аренды.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО возврать из продажи в рассрочку.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО возврат 14 дней.</li>
+        <li>ТПЛ:ЛИРА:ЗО:КО замена.</li>
+      </ul>
+      <ul id="tpl_lira_zo_access">
+        <li>ТПЛ:ЛИРА:ЗО:права доступа.</li>
+        <li>ТПЛ:ЛИРА:ЗО:смена пароля.</li>
+        <li>ТПЛ:ЛИРА:ЗО:блокирование.</li>
+      </ul>
+      <ul>
+      <li id="tpl_ekm_zo">ТПЛ:ЕКМ:ЗО:добавление ЦПО.</li>
 
-      btn_add.addEventListener("click", function(){
-        var li = document.createElement("li"),
-            input = document.createElement("input");
+      <li id="tpl_lira_vp_setup">ТПЛ:ЛИРА:ВП:установка СОП.</li>
+      <li id="tpl_lira_vp_remove">ТПЛ:ЛИРА:ВП:снятие СОП.</li>
+      <li id="tpl_lira_vp_setup">ТПЛ:ЛИРА:ВП:установка СПД.</li>
+      <li id="tpl_lira_vp_remove">ТПЛ:ЛИРА:ВП:снятие СПД.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:смена технологии.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:перестановка.</li>
+      <li id="tpl_lira_vp_setup">ТПЛ:ЛИРА:ВП:установка ДБ.</li>
+      <li id="tpl_lira_vp_remove">ТПЛ:ЛИРА:ВП:снятие ДБ.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:пакет ДРЦ.</li>
+      <li id="tpl_lira_vp_setup">ТПЛ:ЛИРА:ВП:установка пакета.</li>
+      <li id="tpl_lira_vp_remove">ТПЛ:ЛИРА:ВП:снятие пакета.</li>
+      <li id="tpl_lira_vp_setup">ТПЛ:ЛИРА:ВП:установка аб/пл.</li>
+      <li id="tpl_lira_vp_remove">ТПЛ:ЛИРА:ВП:снятие аб/пл.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:смена ТП.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:пакетная загрузка нарядов.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО продажа.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО продажа в рассрочку.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО выдача в аренду.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО возврат.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО возврат из аренды.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО возврать из продажи в рассрочку.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО возврат 14 дней.</li>
+      <li id="tpl_lira_vp_ko">ТПЛ:ЛИРА:ВП:КО замена.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:смена пароля.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:консультирование.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:изменение реквизитов.</li>
+      <li id="tpl_lira_vp_other">ТПЛ:ЛИРА:ВП:аннулирование нарядов.</li>
+      <li id="tpl_lira_in_setup">ТПЛ:ЛИРА:ИН:установка СОП.</li>
+      <li id="tpl_lira_in_remove">ТПЛ:ЛИРА:ИН:снятие СОП.</li>
+      <li id="tpl_lira_in_setup">ТПЛ:ЛИРА:ИН:установка СПД.</li>
+      <li id="tpl_lira_in_remove">ТПЛ:ЛИРА:ИН:снятие СПД.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:смена технологии.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:перестановка.</li>
+      <li id="tpl_lira_in_setup">ТПЛ:ЛИРА:ИН:установка ДБ.</li>
+      <li id="tpl_lira_in_remove">ТПЛ:ЛИРА:ИН:снятие ДБ.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:пакет ДРЦ.</li>
+      <li id="tpl_lira_in_setup">ТПЛ:ЛИРА:ИН:установка пакета.</li>
+      <li id="tpl_lira_in_remove">ТПЛ:ЛИРА:ИН:снятие пакета.</li>
+      <li id="tpl_lira_in_setup">ТПЛ:ЛИРА:ИН:установка аб/пл.</li>
+      <li id="tpl_lira_in_remove">ТПЛ:ЛИРА:ИН:снятие аб/пл.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:смена ТП.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:пакетная загрузка нарядов.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО продажа.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО продажа в рассрочку.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО выдача в аренду.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО возврат.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО возврат из аренды.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО возврать из продажи в рассрочку.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО возврат 14 дней.</li>
+      <li id="tpl_lira_in_ko">ТПЛ:ЛИРА:ИН:КО замена.</li>
+      <li id="tpl_lira_in_consultation">ТПЛ:ЛИРА:ИН:Консультирование.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:работа системы.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:изменение реквизитов.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:аннулирование нарядов.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:права доступа.</li>
+      <li id="tpl_lira_in_other">ТПЛ:ЛИРА:ИН:смена пароля.</li>
+      <li id="tpl_hpsa_zo">ТПЛ:HPSA:ЗО:код ошибки:тип наряда(операция).</li>
+      <li id="tpl_hpsa_vp">ТПЛ:HPSA:ВП:код ошибки:тип наряда(операция).</li>
+      <li id="tpl_hpsa_vp">ТПЛ:HPSA:ВП:-20002:тип наряда(операция).</li>
+      <li id="tpl_hpsa_vp">ТПЛ:HPSA:ВП:-130:тип наряда(операция).</li>
+      <li id="tpl_hpsa_vp">ТПЛ:HPSA:ВП:-49999:тип наряда(операция).</li>
+      <li id="tpl_hpsa_in">ТПЛ:HPSA:ИН:код ошибки:тип наряда(операция).</li>
 
-        input.setAttribute("disabled", "disabled");
-        input.setAttribute("value", new_value.value);
-        li.appendChild(input);
-        list.appendChild(li);
-      });
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:смена канала продаж:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:смена продавца:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:смена агента:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:база данных:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:исключение ПС:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:исключение СТУ:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:исключение HPSA:код ошибки:тип наряда установка х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:исключение HPSA:код ошибки:тип наряда снятие х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:снятие кодом2:х.</li>
+      <li id="tpr_lira_zo">ТПР:ЛИРА:ЗО:корректировка признака складов:х.</li>
+      <li id="tpr_sdp_zo">ТПР:SDP:ЗО:отвязка mac-адреса доп.приставки:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:смена канала продаж:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:смена продавца:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:смена агента:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:база данных:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:исключение ПС:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:исключение СТУ:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:исключение HPSA:код ошибки:тип наряда установка:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:исключение HPSA:код ошибки:тип наряда снятие:х.</li>
+      <li id="tpr_lira_vp">ТПР:ЛИРА:ВП:снятие кодом2:х.</li>
+      <li id="tpr_sdp_vp">ТПР:SDP:ВП:отвязка mac-адреса доп. приставки:х.</li>
+      <li id="tpr_lira_in">ТПР:ЛИРА:ИН:база данных:х.</li>
+      <li id="tpr_lira_in">ТПР:ЛИРА:ИН:исключение ПС:х.</li>
+      <li id="tpr_lira_in">ТПР:ЛИРА:ИН:исключение СТУ:х.</li>
+      <li id="tpr_lira_in">ТПР:ЛИРА:ИН:исключение HPSA:код ошибки:тип наряда(операция):х.</li>
+      <li id="tpr_lira_in">ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
 
-      inputs = list.getElementsByTagName("input");
-      for (var i=0; i<inputs.length; i++) {
-        inputs[i].parentNode.addEventListener("dblclick", function(){
-          this.removeAttribute("disabled");
-        });
-      }
-    </script>
 
-
-
-
-</body></html>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:канал продаж.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена продавца.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:статус заявки.</li>
+      <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка IMS.</li>
+      <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка ОТА.</li>
+      <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка СПД.</li>
+      <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие IMS.</li>
+      <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие ОТА.</li>
+      <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие СПД.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена номера.</li>
+      <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие ДБ.</li>
+      <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка ДБ.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:перестановка.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена ТП.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:печать документов.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:невозможно отобразить страницу.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:заявка на доставку.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:ошибка доступа к сервису.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:отчетность.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:сертификат.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:новая телефония.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:оборудование.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:канал продаж.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена продавца.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:статус заявки.</li>
+      <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие IMS.</li>
+      <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие ОТА.</li>
+      <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие СПД.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена номера.</li>
+      <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие ДБ.</li>
+      <li id="tpl_eissd_vp_setup">ТПЛ:ЕИССД:ВП:установка ДБ.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:перестановка.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена ТП.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:новая телефония.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:оборудование.</li>
+      <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие IMS.</li>
+      <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие ОТА.</li>
+      <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие СПД.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:смена номера.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:смена ТП.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:ошибка доступа к удаленной системе.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:новая телефония.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:замена ТП MVNO.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:присвоить номер МПЗ.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:адресные данные.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:назначение полевого инженера.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:перемещение sim-карт.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена пароля.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:привязка к ЕЛК.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с реестрами ГПП.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:запрос данных.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с нарядами.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:доработка системы.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с формой монтера.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с архивом.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:замена sim-карты.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:проверка техвозможности+доп обследование.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:переоформление mvno.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с обзвоном.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:Неизвестная ошибка при выполнении ajax запроса.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:адресные данные.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:назначение полевого инженера.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:привязка к ЕЛК.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с реестрами ГПП.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с нарядами.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с архивом.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:замена sim-карты.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:проверка техвозможности+доп обследование.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:переоформление mvno.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:адресные данные.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:назначение полевого инженера.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:привязка к ЕЛК.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:работа с реестрами ГПП.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:работа с нарядами.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:замена sim-карты.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:проверка техвозможности+доп обследование.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:переоформление mvno.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:права доступа.</li>
+      <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:разблокировка.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:права доступа.</li>
+      <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:разблокировка.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:праcvsdва доступа.</li>
+      <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:разблокировка.</li>
+      <li>ТПЛ:САСП:ВП:некорректно выбрана услуга.</li>
+    </ul>
+    </div>
+  </main>
+  </body>
+</html>
