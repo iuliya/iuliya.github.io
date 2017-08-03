@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  /*background-color: black;*/
+  background-color: teal;
   background-image: url("img/fon.jpg");
   background-repeat: no-repeat;
   font-family: monospace;
