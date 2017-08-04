@@ -31,7 +31,7 @@ btn_result.addEventListener("click", function(){
 var e = document.getElementById(idList);
 e.style.display = "block";
   console.log(e);
-  oldList =isList;
+  oldList =idList;
 });
 
 btn_reset.addEventListener("click", function(){
