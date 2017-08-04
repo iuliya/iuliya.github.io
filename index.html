@@ -7,7 +7,7 @@
   </head>
   <body>
     <main class="content">
-    <div class="filter">
+    <form method="post" action="" class="filter">
       <label class="filter_item" id="direction">
         <span class="filter_item_title">Направление</span>
         <input type="radio" name="direction" value="tpl">ТПЛ
@@ -15,28 +15,29 @@
       </label>
       <label class="filter_item" id="system">
         <span class="filter_item_title">ИС</span>
-        <input type="radio" name="system" value="lira">Лира
-        <input type="radio" name="system" value="eissd">ЕИССД
-        <input type="radio" name="system" value="hpsa">HPSA
-        <input type="radio" name="system" value="sdp">SDP
-        <input type="radio" name="system" value="ekm">ЕКМ
+        <input type="radio" name="system" value="_lira">Лира
+        <input type="radio" name="system" value="_eissd">ЕИССД
+        <input type="radio" name="system" value="_hpsa">HPSA
+        <input type="radio" name="system" value="_sdp">SDP
+        <input type="radio" name="system" value="_ekm">ЕКМ
       </label>
       <label class="filter_item" id="category">
         <span class="filter_item_title">Категория</span>
-        <input type="radio" name="category" value="zo">ЗО
-        <input type="radio" name="category" value="vp">ВП
-        <input type="radio" name="category" value="in">ИН
+        <input type="radio" name="category" value="_zo">ЗО
+        <input type="radio" name="category" value="_vp">ВП
+        <input type="radio" name="category" value="_in">ИН
       </label>
-      <label class="filter_item" id=>
+      <label class="filter_item" id="classification">
         <span class="filter_item_title">Классификация</span>
-        <input type="radio" name="classification" value="setup">установка
-        <input type="radio" name="classification" value="remove">снятие
-        <input type="radio" name="classification" value="access">доступ
-        <input type="radio" name="classification" value="ko">КО
-        <input type="radio" name="classification" value="other">другое
+        <input type="radio" name="classification" value="_setup">установка
+        <input type="radio" name="classification" value="_remove">снятие
+        <input type="radio" name="classification" value="_access">доступ
+        <input type="radio" name="classification" value="_ko">КО
+        <input type="radio" name="classification" value="_other">другое
       </label>
-      <button type="reset" id="btn_result">OK</button>
-    </div>
+      <button type="button" id="btn_result" value="1">OK</button>
+      <button type="reset" id="btn_reset" value="2">Все не то</button>
+    </form>
 
     <div class="information">
       <div id="tpl_lira_zo_setup">
@@ -245,94 +246,104 @@
           <li>ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
         </ul>
       </div>
-      <div>
+      <div id="tpl_eissd_zo_setup">
         <ul>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:канал продаж.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена продавца.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:статус заявки.</li>
-          <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка IMS.</li>
-          <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка ОТА.</li>
-          <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка СПД.</li>
-          <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие IMS.</li>
-          <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие ОТА.</li>
-          <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие СПД.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена номера.</li>
-          <li id="tpl_eissd_zo_remove">ТПЛ:ЕИССД:ЗО:снятие ДБ.</li>
-          <li id="tpl_eissd_zo_setup">ТПЛ:ЕИССД:ЗО:установка ДБ.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:перестановка.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена ТП.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:печать документов.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:невозможно отобразить страницу.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:заявка на доставку.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:ошибка доступа к сервису.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:отчетность.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:сертификат.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:новая телефония.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:оборудование.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:канал продаж.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена продавца.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:статус заявки.</li>
-          <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие IMS.</li>
-          <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие ОТА.</li>
-          <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие СПД.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена номера.</li>
-          <li id="tpl_eissd_vp_remove">ТПЛ:ЕИССД:ВП:снятие ДБ.</li>
-          <li id="tpl_eissd_vp_setup">ТПЛ:ЕИССД:ВП:установка ДБ.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:перестановка.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:смена ТП.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:новая телефония.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:оборудование.</li>
-          <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие IMS.</li>
-          <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие ОТА.</li>
-          <li id="tpl_eissd_in_remove">ТПЛ:ЕИССД:ИН:снятие СПД.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:смена номера.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:смена ТП.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:ошибка доступа к удаленной системе.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:новая телефония.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:замена ТП MVNO.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:присвоить номер МПЗ.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:адресные данные.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:назначение полевого инженера.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:перемещение sim-карт.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:смена пароля.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:привязка к ЕЛК.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с реестрами ГПП.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:запрос данных.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с нарядами.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:доработка системы.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с формой монтера.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с архивом.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:замена sim-карты.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:проверка техвозможности+доп обследование.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:переоформление mvno.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:работа с обзвоном.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:Неизвестная ошибка при выполнении ajax запроса.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:адресные данные.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:назначение полевого инженера.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:привязка к ЕЛК.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с реестрами ГПП.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с нарядами.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:работа с архивом.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:замена sim-карты.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:проверка техвозможности+доп обследование.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:переоформление mvno.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:адресные данные.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:назначение полевого инженера.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:привязка к ЕЛК.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:работа с реестрами ГПП.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:работа с нарядами.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:замена sim-карты.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:проверка техвозможности+доп обследование.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:переоформление mvno.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:права доступа.</li>
-          <li id="tpl_eissd_zo_other">ТПЛ:ЕИССД:ЗО:разблокировка.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:права доступа.</li>
-          <li id="tpl_eissd_vp_other">ТПЛ:ЕИССД:ВП:разблокировка.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:праcvsdва доступа.</li>
-          <li id="tpl_eissd_in_other">ТПЛ:ЕИССД:ИН:разблокировка.</li>
-          <li>ТПЛ:САСП:ВП:некорректно выбрана услуга.</li>
+          <li>ТПЛ:ЕИССД:ЗО:установка IMS.</li>
+          <li>ТПЛ:ЕИССД:ЗО:установка ОТА.</li>
+          <li>ТПЛ:ЕИССД:ЗО:установка СПД.</li>
+          <li>ТПЛ:ЕИССД:ЗО:установка ДБ.</li>
+        </ul>
+        </div>
+        <div id="tpl_eissd_zo_remove">
+          <ul>
+          <li>ТПЛ:ЕИССД:ЗО:снятие IMS.</li>
+          <li>ТПЛ:ЕИССД:ЗО:снятие ОТА.</li>
+          <li>ТПЛ:ЕИССД:ЗО:снятие СПД.</li>
+          <li>ТПЛ:ЕИССД:ЗО:снятие ДБ.</li>
+        </ul>
+        </div>
+        <div id="tpl_eissd_zo_other">
+          <ul>
+          <li>ТПЛ:ЕИССД:ЗО:канал продаж.</li>
+          <li>ТПЛ:ЕИССД:ЗО:смена продавца.</li>
+          <li>ТПЛ:ЕИССД:ЗО:статус заявки.</li>
+          <li>ТПЛ:ЕИССД:ЗО:смена номера.</li>
+          <li>ТПЛ:ЕИССД:ЗО:перестановка.</li>
+          <li>ТПЛ:ЕИССД:ЗО:смена ТП.</li>
+          <li>ТПЛ:ЕИССД:ЗО:печать документов.</li>
+          <li>ТПЛ:ЕИССД:ЗО:невозможно отобразить страницу.</li>
+          <li>ТПЛ:ЕИССД:ЗО:заявка на доставку.</li>
+          <li>ТПЛ:ЕИССД:ЗО:ошибка доступа к сервису.</li>
+          <li>ТПЛ:ЕИССД:ЗО:отчетность.</li>
+          <li>ТПЛ:ЕИССД:ЗО:сертификат.</li>
+          <li>ТПЛ:ЕИССД:ЗО:новая телефония.</li>
+          <li>ТПЛ:ЕИССД:ЗО:оборудование.</li>
+          <li>ТПЛ:ЕИССД:ЗО:права доступа.</li>
+          <li>ТПЛ:ЕИССД:ЗО:разблокировка.</li>
         </ul>
       </div>
+
+          <div id="tpl_eissd_vp_setup">ТПЛ:ЕИССД:ВП:установка ДБ.</div>
+
+          <div id="tpl_eissd_vp_remove">
+            <ul>
+          <li>ТПЛ:ЕИССД:ВП:снятие ДБ.</li>
+          <li>ТПЛ:ЕИССД:ВП:снятие IMS.</li>
+          <li>ТПЛ:ЕИССД:ВП:снятие ОТА.</li>
+          <li>ТПЛ:ЕИССД:ВП:снятие СПД.</li>
+        </ul>
+      </div>
+      <div id="tpl_eissd_vp_other">
+        <ul>
+          <li>ТПЛ:ЕИССД:ВП:смена номера.</li>
+          <li>ТПЛ:ЕИССД:ВП:канал продаж.</li>
+          <li>ТПЛ:ЕИССД:ВП:смена продавца.</li>
+          <li>ТПЛ:ЕИССД:ВП:статус заявки.</li>
+          <li>ТПЛ:ЕИССД:ВП:перестановка.</li>
+          <li>ТПЛ:ЕИССД:ВП:смена ТП.</li>
+          <li>ТПЛ:ЕИССД:ВП:новая телефония.</li>
+          <li>ТПЛ:ЕИССД:ВП:оборудование.</li>
+          <li>ТПЛ:ЕИССД:ВП:адресные данные.</li>
+          <li>ТПЛ:ЕИССД:ВП:назначение полевого инженера.</li>
+          <li>ТПЛ:ЕИССД:ВП:привязка к ЕЛК.</li>
+          <li>ТПЛ:ЕИССД:ВП:работа с реестрами ГПП.</li>
+          <li>ТПЛ:ЕИССД:ВП:работа с нарядами.</li>
+          <li>ТПЛ:ЕИССД:ВП:работа с архивом.</li>
+          <li>ТПЛ:ЕИССД:ВП:замена sim-карты.</li>
+          <li>ТПЛ:ЕИССД:ВП:проверка техвозможности+доп обследование.</li>
+          <li>ТПЛ:ЕИССД:ВП:переоформление mvno.</li>
+          <li>ТПЛ:ЕИССД:ВП:права доступа.</li>
+          <li>ТПЛ:ЕИССД:ВП:разблокировка.</li>
+        </ul>
+      </div>
+      <div id="tpl_eissd_in_remove">
+        <ul>
+          <li>ТПЛ:ЕИССД:ИН:снятие IMS.</li>
+          <li>ТПЛ:ЕИССД:ИН:снятие ОТА.</li>
+          <li>ТПЛ:ЕИССД:ИН:снятие СПД.</li>
+        </ul>
+      </div>
+      <div id="tpl_eissd_in_other">
+        <ul>
+          <li >ТПЛ:ЕИССД:ИН:смена номера.</li>
+          <li>ТПЛ:ЕИССД:ИН:смена ТП.</li>
+          <li>ТПЛ:ЕИССД:ИН:ошибка доступа к удаленной системе.</li>
+          <li>ТПЛ:ЕИССД:ИН:новая телефония.</li>
+          <li>ТПЛ:ЕИССД:ИН:адресные данные.</li>
+          <li>ТПЛ:ЕИССД:ИН:назначение полевого инженера.</li>
+          <li>ТПЛ:ЕИССД:ИН:привязка к ЕЛК.</li>
+          <li>ТПЛ:ЕИССД:ИН:работа с реестрами ГПП.</li>
+          <li>ТПЛ:ЕИССД:ИН:работа с нарядами.</li>
+          <li>ТПЛ:ЕИССД:ИН:замена sim-карты.</li>
+          <li>ТПЛ:ЕИССД:ИН:проверка техвозможности+доп обследование.</li>
+          <li>ТПЛ:ЕИССД:ИН:переоформление mvno.</li>
+          <li>ТПЛ:ЕИССД:ИН:праcvsdва доступа.</li>
+          <li>ТПЛ:ЕИССД:ИН:разблокировка.</li>
+        </ul>
+      </div>
+
+          <div>ТПЛ:САСП:ВП:некорректно выбрана услуга.</div>
+
     </div>
   </main>
 

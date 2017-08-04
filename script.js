@@ -6,13 +6,45 @@ var showList,
     btn_result = document.getElementById("btn_result"),
     inputs = document.getElementsByTagName("input");
 
-for (var i = 0; i < inputs.length; i++){
-  inputs[i].addEventListener("click", function(){
+    var idList = oldList = "";
+
+function isCheck(arr, elem){
+
+  for (var i = 0; i < arr.length; i++)
+  arr[i].addEventListener("change", function(){
     this.setAttribute("checked", true);
+    idList = idList + this.value;
+
   });
+
 }
 
+isCheck(direction);
+isCheck(system);
+isCheck(category);
+isCheck(classification);
 
+
+btn_result.addEventListener("click", function(){
+
+ console.log(idList);
+var e = document.getElementById(idList);
+e.style.display = "block";
+  console.log(e);
+  oldList =isList;
+});
+
+btn_reset.addEventListener("click", function(){
+  idList = "";
+for (var i = 0; i < inputs.length; i++)
+ inputs[i].removeAttribute("checked");
+
+var e = document.getElementById(oldList);
+e.style.display = "none";
+console.log("текущий элемент " + idList)
+});
+
+/*
 btn_result.addEventListener("click", function(){
   itemDirection = hasChecked(direction);
   console.log(itemDirection + direction[itemDirection].value);
@@ -50,3 +82,4 @@ function hasChecked (arr){
   for(var i = 0; i < arr.length; i++)
   if (arr[i].hasAttribute("checked"))  return i;
   }
+*/
