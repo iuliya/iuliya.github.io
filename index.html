@@ -2,64 +2,64 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Классификация</title>
+    <title>Кодики-котики</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bad+Script&amp;subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <main class="content">
-    <form method="post" action="" class="filter">
-      <label class="filter_item" id="direction">
-        <span class="filter_item_title">Направление</span>
-        <input type="radio" name="direction" value="tpl">ТПЛ
-        <input type="radio" name="direction" value="tpr">ТПР
-      </label>
-      <label class="filter_item" id="system">
-        <span class="filter_item_title">ИС</span>
-        <input type="radio" name="system" value="_lira">Лира
-        <input type="radio" name="system" value="_eissd">ЕИССД
-        <input type="radio" name="system" value="_hpsa">HPSA
-        <input type="radio" name="system" value="_sdp">SDP
-        <input type="radio" name="system" value="_ekm">ЕКМ
-      </label>
-      <label class="filter_item" id="category">
-        <span class="filter_item_title">Категория</span>
-        <input type="radio" name="category" value="_zo">ЗО
-        <input type="radio" name="category" value="_vp">ВП
-        <input type="radio" name="category" value="_in">ИН
-      </label>
-      <label class="filter_item" id="classification">
-        <span class="filter_item_title">Классификация</span>
-        <input type="radio" name="classification" value="_setup">установка
-        <input type="radio" name="classification" value="_remove">снятие
-        <input type="radio" name="classification" value="_access">доступ
-        <input type="radio" name="classification" value="_ko">КО
-        <input type="radio" name="classification" value="_other">другое
-      </label>
-      <button type="button" id="btn_result" value="1">OK</button>
-      <button type="reset" id="btn_reset" value="2">Все не то</button>
-    </form>
+      <h1 class="page-title">Коды классификации</h1>
+      <form class="filter">
+        <div class="filter_item" id="direction">
+          <h2 class="filter_item_title">Делаем </h2>
+          <label><input type="radio" name="direction" value="tpl">ТПЛ</label>
+          <label><input type="radio" name="direction" value="tpr">ТПР</label>
+        </div>
+        <div class="filter_item" id="system">
+          <h2 class="filter_item_title">Где?</h2>
+          <label><input type="radio" name="system" value="_lira">Лира</label>
+          <label><input type="radio" name="system" value="_eissd">ЕИССД</label>
+          <label><input type="radio" name="system" value="_hpsa">HPSA</label>
+          <label><input type="radio" name="system" value="_sdp">SDP</label>
+          <label><input type="radio" name="system" value="_ekm">ЕКМ</label>
+        </div>
+        <div class="filter_item" id="category">
+          <h2 class="filter_item_title">Почему?</h2>
+          <label><input type="radio" name="category" value="_zo">ЗО</label>
+          <label><input type="radio" name="category" value="_vp">ВП</label>
+          <label><input type="radio" name="category" value="_in">ИН</label>
+        </div>
+        <div class="filter_item" id="classification">
+          <h2 class="filter_item_title">Про что?</h2><br/>
+          <label><input type="radio" name="classification" value="_setup">установка</label>
+          <label><input type="radio" name="classification" value="_remove">снятие</label>
+          <label><input type="radio" name="classification" value="_access">доступ</label>
+          <label><input type="radio" name="classification" value="_ko">КО</label>
+          <label><input type="radio" name="classification" value="_other">другое</label>
+        </div>
+        <div class="buttons">
+          <button type="button" id="btn_result" value="1">Давай</button>
+          <button type="reset" id="btn_reset" value="2">Все не то</button>
+          <button type="button" id="btn_comment" value="3" class="invisible">Создать коммент</button>
+        </div>
+      </form>
 
-    <div class="information">
-      <div id="tpl_lira_zo_setup">
-        <ul>
+      <div class="information"> <!-- begin informaion -->
+        <ul id="tpl_lira_zo_setup">
           <li>ТПЛ:ЛИРА:ЗО:установка СОП.</li>
           <li>ТПЛ:ЛИРА:ЗО:установка СПД.</li>
           <li>ТПЛ:ЛИРА:ЗО:установка ДБ.</li>
           <li>ТПЛ:ЛИРА:ЗО:установка пакета.</li>
           <li>ТПЛ:ЛИРА:ЗО:установка аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_zo_remove">
-        <ul>
+        <ul id="tpl_lira_zo_remove">
           <li>ТПЛ:ЛИРА:ЗО:снятие СОП.</li>
           <li>ТПЛ:ЛИРА:ЗО:снятие СПД.</li>
           <li>ТПЛ:ЛИРА:ЗО:снятие ДБ.</li>
           <li>ТПЛ:ЛИРА:ЗО:снятие пакета.</li>
           <li>ТПЛ:ЛИРА:ЗО:снятие аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_zo_other">
-        <ul>
+        <ul id="tpl_lira_zo_other">
           <li>ТПЛ:ЛИРА:ЗО:смена технологии.</li>
           <li>ТПЛ:ЛИРА:ЗО:перестановка.</li>
           <li>ТПЛ:ЛИРА:ЗО:пакет ДРЦ.</li>
@@ -71,9 +71,7 @@
           <li>ТПЛ:ЛИРА:ЗО:аннулирование нарядов.</li>
           <li>ТПЛ:ЛИРА:ЗО:консультирование.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_zo_ko">
-        <ul>
+        <ul id="tpl_lira_zo_ko">
           <li>ТПЛ:ЛИРА:ЗО:КО продажа.</li>
           <li>ТПЛ:ЛИРА:ЗО:КО продажа в рассрочку.</li>
           <li>ТПЛ:ЛИРА:ЗО:КО выдача в аренду.</li>
@@ -83,38 +81,30 @@
           <li>ТПЛ:ЛИРА:ЗО:КО возврат 14 дней.</li>
           <li>ТПЛ:ЛИРА:ЗО:КО замена.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_zo_access">
-        <ul>
+        <ul id="tpl_lira_zo_access">
           <li>ТПЛ:ЛИРА:ЗО:права доступа.</li>
           <li>ТПЛ:ЛИРА:ЗО:смена пароля.</li>
           <li>ТПЛ:ЛИРА:ЗО:блокирование.</li>
         </ul>
-      </div>
-      <div id="tpl_ekm_zo">
-        ТПЛ:ЕКМ:ЗО:добавление ЦПО.
-      </div>
-      <!-- ВП  -->
-      <div id="tpl_lira_vp_setup">
-        <ul>
+        <ul id="tpl_ekm_zo">
+          <li>ТПЛ:ЕКМ:ЗО:добавление ЦПО.</li>
+        </ul>
+        <!-- ВП  -->
+        <ul id="tpl_lira_vp_setup">
           <li>ТПЛ:ЛИРА:ВП:установка СОП.</li>
           <li>ТПЛ:ЛИРА:ВП:установка СПД.</li>
           <li>ТПЛ:ЛИРА:ВП:установка ДБ.</li>
           <li>ТПЛ:ЛИРА:ВП:установка пакета.</li>
           <li>ТПЛ:ЛИРА:ВП:установка аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_vp_remove">
-        <ul>
+        <ul id="tpl_lira_vp_remove">
           <li>ТПЛ:ЛИРА:ВП:снятие СОП.</li>
           <li>ТПЛ:ЛИРА:ВП:снятие СПД.</li>
           <li>ТПЛ:ЛИРА:ВП:снятие ДБ.</li>
           <li>ТПЛ:ЛИРА:ВП:снятие пакета.</li>
           <li>ТПЛ:ЛИРА:ВП:снятие аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_vp_other">
-        <ul>
+        <ul id="tpl_lira_vp_other">
           <li>ТПЛ:ЛИРА:ВП:смена технологии.</li>
           <li>ТПЛ:ЛИРА:ВП:перестановка.</li>
           <li>ТПЛ:ЛИРА:ВП:пакет ДРЦ.</li>
@@ -124,9 +114,7 @@
           <li>ТПЛ:ЛИРА:ВП:изменение реквизитов.</li>
           <li>ТПЛ:ЛИРА:ВП:аннулирование нарядов.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_vp_ko">
-        <ul>
+        <ul id="tpl_lira_vp_ko">
           <li>ТПЛ:ЛИРА:ВП:КО продажа.</li>
           <li>ТПЛ:ЛИРА:ВП:КО продажа в рассрочку.</li>
           <li>ТПЛ:ЛИРА:ВП:КО выдача в аренду.</li>
@@ -136,30 +124,24 @@
           <li>ТПЛ:ЛИРА:ВП:КО возврат 14 дней.</li>
           <li>ТПЛ:ЛИРА:ВП:КО замена.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_vp_access">
-        ТПЛ:ЛИРА:ВП:смена пароля.
-      </div>
-      <div id="tpl_lira_in_setup">
-        <ul>
+        <ul id="tpl_lira_vp_access">
+          <li>ТПЛ:ЛИРА:ВП:смена пароля.</li>
+        </ul>
+        <ul id="tpl_lira_in_setup">
           <li>ТПЛ:ЛИРА:ИН:установка СОП.</li>
           <li>ТПЛ:ЛИРА:ИН:установка ДБ.</li>
           <li>ТПЛ:ЛИРА:ИН:установка СПД.</li>
           <li>ТПЛ:ЛИРА:ИН:установка пакета.</li>
           <li>ТПЛ:ЛИРА:ИН:установка аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_in_remove">
-        <ul>
+        <ul id="tpl_lira_in_remove">
           <li>ТПЛ:ЛИРА:ИН:снятие СПД.</li>
           <li>ТПЛ:ЛИРА:ИН:снятие СОП.</li>
           <li>ТПЛ:ЛИРА:ИН:снятие ДБ.</li>
           <li>ТПЛ:ЛИРА:ИН:снятие пакета.</li>
           <li>ТПЛ:ЛИРА:ИН:снятие аб/пл.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_in_ko">
-        <ul>
+        <ul id="tpl_lira_in_ko">
           <li>ТПЛ:ЛИРА:ИН:КО продажа.</li>
           <li>ТПЛ:ЛИРА:ИН:КО продажа в рассрочку.</li>
           <li>ТПЛ:ЛИРА:ИН:КО выдача в аренду.</li>
@@ -169,9 +151,7 @@
           <li>ТПЛ:ЛИРА:ИН:КО возврат 14 дней.</li>
           <li>ТПЛ:ЛИРА:ИН:КО замена.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_in_other">
-        <ul>
+        <ul id="tpl_lira_in_other">
           <li>ТПЛ:ЛИРА:ИН:Консультирование.</li>
           <li>ТПЛ:ЛИРА:ИН:работа системы.</li>
           <li>ТПЛ:ЛИРА:ИН:изменение реквизитов.</li>
@@ -182,30 +162,23 @@
           <li>ТПЛ:ЛИРА:ИН:смена технологии.</li>
           <li>ТПЛ:ЛИРА:ИН:перестановка.</li>
         </ul>
-      </div>
-      <div id="tpl_lira_in_access">
-        <ul>
-          <li>ТПЛ:ЛИРА:ИН:права доступа.</li>
-          <li>ТПЛ:ЛИРА:ИН:смена пароля.</li>
+        <ul id="tpl_lira_in_access">
+            <li>ТПЛ:ЛИРА:ИН:права доступа.</li>
+            <li>ТПЛ:ЛИРА:ИН:смена пароля.</li>
         </ul>
-      </div>
-
-      <div id="tpl_hpsa_zo">
-        ТПЛ:HPSA:ЗО:код ошибки:тип наряда(операция).
-      </div>
-      <div  id="tpl_hpsa_vp">
-        <ul>
+        <ul id="tpl_hpsa_zo">
+          <li>ТПЛ:HPSA:ЗО:код ошибки:тип наряда(операция).</li>
+        </ul>
+        <ul id="tpl_hpsa_vp">
           <li>ТПЛ:HPSA:ВП:код ошибки:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-20002:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-130:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-49999:тип наряда(операция).</li>
         </ul>
-      </div>
-      <div id="tpl_hpsa_in">
-        ТПЛ:HPSA:ИН:код ошибки:тип наряда(операция).
-      </div>
-      <div id="tpr_lira_zo">
-        <ul>
+        <ul id="tpl_hpsa_in">
+          <li>ТПЛ:HPSA:ИН:код ошибки:тип наряда(операция).</li>
+        </ul>
+        <ul id="tpr_lira_zo">
           <li>ТПР:ЛИРА:ЗО:смена канала продаж:х.</li>
           <li>ТПР:ЛИРА:ЗО:смена продавца:х.</li>
           <li>ТПР:ЛИРА:ЗО:смена агента:х.</li>
@@ -217,12 +190,10 @@
           <li>ТПР:ЛИРА:ЗО:снятие кодом2:х.</li>
           <li>ТПР:ЛИРА:ЗО:корректировка признака складов:х.</li>
         </ul>
-      </div>
-      <div id="tpr_sdp_zo">
-        ТПР:SDP:ЗО:отвязка mac-адреса доп.приставки:х.
-      </div>
-      <div id="tpr_lira_vp">
-        <ul>
+        <ul id="tpr_sdp_zo">
+          <li>ТПР:SDP:ЗО:отвязка mac-адреса доп.приставки:х.</li>
+        </ul>
+        <ul id="tpr_lira_vp">
           <li>ТПР:ЛИРА:ВП:смена канала продаж:х.</li>
           <li>ТПР:ЛИРА:ВП:смена продавца:х.</li>
           <li>ТПР:ЛИРА:ВП:смена агента:х.</li>
@@ -233,37 +204,29 @@
           <li>ТПР:ЛИРА:ВП:исключение HPSA:код ошибки:тип наряда снятие:х.</li>
           <li>ТПР:ЛИРА:ВП:снятие кодом2:х.</li>
         </ul>
-      </div>
-      <div id="tpr_sdp_vp">
-        ТПР:SDP:ВП:отвязка mac-адреса доп. приставки:х.
-      </div>
-      <div id="tpr_lira_in">
-        <ul>
+        <ul id="tpr_sdp_vp">
+          <li>ТПР:SDP:ВП:отвязка mac-адреса доп. приставки:х.</li>
+        </ul>
+        <ul id="tpr_lira_in">
           <li>ТПР:ЛИРА:ИН:база данных:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение СТУ:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение HPSA:код ошибки:тип наряда(операция):х.</li>
           <li>ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
         </ul>
-      </div>
-      <div id="tpl_eissd_zo_setup">
-        <ul>
+        <ul id="tpl_eissd_zo_setup">
           <li>ТПЛ:ЕИССД:ЗО:установка IMS.</li>
           <li>ТПЛ:ЕИССД:ЗО:установка ОТА.</li>
           <li>ТПЛ:ЕИССД:ЗО:установка СПД.</li>
           <li>ТПЛ:ЕИССД:ЗО:установка ДБ.</li>
         </ul>
-        </div>
-        <div id="tpl_eissd_zo_remove">
-          <ul>
+        <ul id="tpl_eissd_zo_remove">
           <li>ТПЛ:ЕИССД:ЗО:снятие IMS.</li>
           <li>ТПЛ:ЕИССД:ЗО:снятие ОТА.</li>
           <li>ТПЛ:ЕИССД:ЗО:снятие СПД.</li>
           <li>ТПЛ:ЕИССД:ЗО:снятие ДБ.</li>
         </ul>
-        </div>
-        <div id="tpl_eissd_zo_other">
-          <ul>
+        <ul id="tpl_eissd_zo_other">
           <li>ТПЛ:ЕИССД:ЗО:канал продаж.</li>
           <li>ТПЛ:ЕИССД:ЗО:смена продавца.</li>
           <li>ТПЛ:ЕИССД:ЗО:статус заявки.</li>
@@ -281,20 +244,16 @@
           <li>ТПЛ:ЕИССД:ЗО:права доступа.</li>
           <li>ТПЛ:ЕИССД:ЗО:разблокировка.</li>
         </ul>
-      </div>
-
-          <div id="tpl_eissd_vp_setup">ТПЛ:ЕИССД:ВП:установка ДБ.</div>
-
-          <div id="tpl_eissd_vp_remove">
-            <ul>
+        <ul id="tpl_eissd_vp_setup">
+          <li>ТПЛ:ЕИССД:ВП:установка ДБ.</li>
+        </ul>
+        <ul id="tpl_eissd_vp_remove">
           <li>ТПЛ:ЕИССД:ВП:снятие ДБ.</li>
           <li>ТПЛ:ЕИССД:ВП:снятие IMS.</li>
           <li>ТПЛ:ЕИССД:ВП:снятие ОТА.</li>
           <li>ТПЛ:ЕИССД:ВП:снятие СПД.</li>
         </ul>
-      </div>
-      <div id="tpl_eissd_vp_other">
-        <ul>
+        <ul id="tpl_eissd_vp_other">
           <li>ТПЛ:ЕИССД:ВП:смена номера.</li>
           <li>ТПЛ:ЕИССД:ВП:канал продаж.</li>
           <li>ТПЛ:ЕИССД:ВП:смена продавца.</li>
@@ -315,16 +274,12 @@
           <li>ТПЛ:ЕИССД:ВП:права доступа.</li>
           <li>ТПЛ:ЕИССД:ВП:разблокировка.</li>
         </ul>
-      </div>
-      <div id="tpl_eissd_in_remove">
-        <ul>
+        <ul id="tpl_eissd_in_remove">
           <li>ТПЛ:ЕИССД:ИН:снятие IMS.</li>
           <li>ТПЛ:ЕИССД:ИН:снятие ОТА.</li>
           <li>ТПЛ:ЕИССД:ИН:снятие СПД.</li>
         </ul>
-      </div>
-      <div id="tpl_eissd_in_other">
-        <ul>
+        <ul id="tpl_eissd_in_other">
           <li >ТПЛ:ЕИССД:ИН:смена номера.</li>
           <li>ТПЛ:ЕИССД:ИН:смена ТП.</li>
           <li>ТПЛ:ЕИССД:ИН:ошибка доступа к удаленной системе.</li>
@@ -340,13 +295,15 @@
           <li>ТПЛ:ЕИССД:ИН:праcvsdва доступа.</li>
           <li>ТПЛ:ЕИССД:ИН:разблокировка.</li>
         </ul>
-      </div>
+        <ul>
+          <li>ТПЛ:САСП:ВП:некорректно выбрана услуга.</li>
+        </ul>
+        <div class="error">
+          Нет такого элемента!
+        </div>
 
-          <div>ТПЛ:САСП:ВП:некорректно выбрана услуга.</div>
-
-    </div>
-  </main>
-
-  <script src = "script.js"></script>
+      </div><!-- end informaion -->
+    </main>
+    <script src = "script.js"></script>
   </body>
 </html>
