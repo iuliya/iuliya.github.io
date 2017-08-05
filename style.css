@@ -12,10 +12,10 @@ body {
 
 .content{
   position: absolute;
-  width: 960px;
+  width: 984px;
   left: 50%;
   margin-top:50px;
-  margin-left: -480px;
+  margin-left: -492px;
   border-radius: 50px;
   box-shadow: 0 0 37px 30px #fff;
   background-color: white;
@@ -88,7 +88,7 @@ body {
 }
 .information {
   float: right;
-  width: 525px;
+  width: 550px;
   min-height: 450px;
   /*border-left: 1px dotted #a2231d;*/
   background-image: url("img/fon-inf-380.png");
