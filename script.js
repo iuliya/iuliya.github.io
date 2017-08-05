@@ -26,9 +26,16 @@ function isCheck(arr, elem){
       idList = idList + this.value;
 
       if (this.value == "tpr"){
+        if (idList) idList = "tpr";
         document.getElementById("btn_comment").classList.remove("invisible");
         document.getElementById("classification").classList.add("invisible");
         document.getElementById("forEdit").classList.remove("invisible");
+      }
+      if (idList && this.value == "tpl"){
+        idList = "tpl";
+        document.getElementById("btn_comment").classList.add("invisible");
+        document.getElementById("classification").classList.remove("invisible");
+        document.getElementById("forEdit").classList.add("invisible");
       }
   });
 
@@ -61,17 +68,17 @@ btn_result.addEventListener("click", function(){
   if (list){
     document.querySelector(".information").style.backgroundPosition = "-1000px";
     var n = count.value;
-    if (n) {
+    if (count.value) {
       tprList =  list.innerHTML;
       var newList = document.createElement("ul");
       newList.className = "temp_block";
-      newList.innerHTML = tprList.replace(/:х/g, ":" + n);
+      newList.innerHTML = tprList.replace(/:х/g, ":" + count.value);
       newList.style.display = "block";
       document.querySelector(".information").insertBefore(newList, document.getElementById("comments"));
     } else {
-      list.style.display = "block";
-    }
-    oldList = idList;
+        list.style.display = "block";
+      }
+      oldList = idList;
   } else {
     err.style.display = "block";
   }
@@ -105,18 +112,20 @@ btn_reset.addEventListener("click", function(){
       list.style.display = "none";
       list.innerText = tprList;
       document.querySelector(".information").style.backgroundPosition = "center"
-  } else{
+  } else {
       err.style.display="none";
       console.log("была ошибка ");
   }
   for (var i = 0; i < inputs.length; i++)
     inputs[i].removeAttribute("checked");
 
-    document.getElementById("btn_comment").classList.add("invisible");
-    document.getElementById("classification").classList.remove("invisible");
-    document.getElementById("forEdit").classList.add("invisible");
-    document.querySelector(".information .temp_block").remove();
+  document.getElementById("btn_comment").classList.add("invisible");
+  document.getElementById("classification").classList.remove("invisible");
+  document.getElementById("forEdit").classList.add("invisible");
+  if (count.value) {
     document.querySelector(".information .temp_comment").remove();
+    document.querySelector(".information .temp_block").remove();
+  }  else {
     document.getElementById("comments").style.display = "none";
-
+  }
 });
