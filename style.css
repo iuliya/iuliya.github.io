@@ -30,6 +30,7 @@ body {
 }
 
 .page-title span{
+  color: #35422e;
   font-size: 10px;
   text-transform: lowercase;
 }
