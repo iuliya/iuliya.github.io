@@ -37,11 +37,27 @@
           <label><input type="radio" name="classification" value="_ko">КО</label>
           <label><input type="radio" name="classification" value="_other">другое</label>
         </div>
-        <div class="filter_item  invisible" id="count">
-          <label>
-            <h2 class="filter_item_title">Количество?</h2>
-            <input type="text" value="0" class="count">
-          </label>
+        <div class="filter_item  invisible" id="forEdit">
+            <label>
+              <h2 class="filter_item_title">Количество</h2>
+              <input type="text" value="" id="count" class="for_edit">
+            </label><br/>
+            <label>
+              <h2 class="filter_item_title">Прописала</h2>
+              <input type="text" value="" id="agentFio" class="for_edit">
+            </label><br/>
+            <label>
+              <h2 class="filter_item_title">Логин</h2>
+              <input type="text" value="" id="login" class="for_edit">
+            </label><br/>
+            <label>
+              <h2 class="filter_item_title">ТП</h2>
+              <input type="text" value="" id="tp" class="for_edit">
+            </label><br/>
+            <label>
+              <h2 class="filter_item_title">АП</h2>
+              <input type="text" value="" id="ap" class="for_edit">
+            </label>
         </div>
         <div class="buttons">
           <button type="button" id="btn_result" value="1">Давай</button>
@@ -305,28 +321,29 @@
           <li>ТПЛ:САСП:ВП:некорректно выбрана услуга.</li>
         </ul>
         <ul id="comments" class="comments">
-          <li>В Лире на устр. 3492230030 прописала АП 10032 в соотв. с ПС.</li>
-          <li>В Лире на устр. 77455243214 прописала ТП 38605 в соотв. с ПС.</li>
-          <li>В Лире на устр. 77455243214 удалила АП 38605 в соотв. с ПС.</li>
+          <li>В Лире на устр. number прописала АП apl в соотв. с ПС.</li>
+          <li>В Лире на устр. number прописала ТП tp в соотв. с ПС.</li>
+          <li>В Лире на устр. number удалила АП apl в соотв. с ПС.</li>
+          <li>В наряде прописала something.</li>
+          <li>В нарядах прописала something.</li>
           <li>Внесены изменения полей Канал продаж, Дилер ЕСПО, Субдилер, Продавец ЕСПО.</li>
           <li>Внесены изменения полей Агент, Канал продаж, Дилер ЕСПО, Субдилер, Продавец ЕСПО.</li>
-          <li>В наряде прописала Агент:268253.</li>
-          <li>В нарядах прописала Агент:268253.</li>
-          <li>В нарядах прописала ФИО продавца.</li>
-          <li>В наряде прописала ФИО продавца.</li>
+          <li>Поставлена отметка об исполнении в HPSA.
+              Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
+          </li>
           <li>Поставлена отметка об исполнении в HPSA.
               Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
           </li>
           <li>Поставлена отметка об исполнении в ПС.</li>
           <li>Поставлена отметка об исполнении в Аргусе.</li>
           <li>аннулирование установки ошибка СА -130<br/>
-              Поставлена отметка об исполнении в HPSA.
+              Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
           </li>
           <li>аннулирование установки ошибка СА -20002<br/>
-              Поставлена отметка об исполнении в HPSA.
+              Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
           </li>
           <li>установка ошибка СА -60006<br/>
-              Поставлена отметка об исполнении в HPSA.
+              Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме_
           </li>
         </ul>
         <div class="error">
