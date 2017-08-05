@@ -71,8 +71,10 @@ btn_result.addEventListener("click", function(){
     } else {
       list.style.display = "block";
     }
+    oldList = idList;
+  } else {
+    err.style.display = "block";
   }
-    oldList =idList;
 });
 
 btn_comment.addEventListener("click", function(){
