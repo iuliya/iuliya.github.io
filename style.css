@@ -48,6 +48,18 @@ body {
   color: #35422e;
 }
 
+.filter_item .count {
+  width: 20px;
+  padding: 1px 2px;
+  border: none;
+  outline: none;
+}
+
+.filter_item .count:focus {
+  padding: 5px;
+  outline: 1px dotted #35422e;
+}
+
 .filter_item_title {
   display: inline-block;
   margin: 5px 0;
@@ -86,6 +98,7 @@ body {
 .invisible {
   display: none;
 }
+
 .information {
   float: right;
   width: 550px;
@@ -101,6 +114,17 @@ body {
  display: none;
  padding: 0;
  list-style: none;
+}
+
+.information .comments {
+  border-top: 1px dotted #35422e;
+  padding-top: 10px;
+  text-align: left;
+  color: #35422e;
+}
+
+.information .comments li {
+  margin: 5px 0;
 }
 
 .error {
