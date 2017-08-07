@@ -67,6 +67,9 @@ btn_result.addEventListener("click", function(){
   //var count = 1;
   if (list){
     document.querySelector(".information").style.backgroundPosition = "-1000px";
+    if (document.querySelector(".information .temp_block")) {
+      document.querySelector(".information .temp_block").remove();
+    }
     var n = count.value;
     if (count.value) {
       tprList =  list.innerHTML;
@@ -87,19 +90,20 @@ btn_result.addEventListener("click", function(){
 btn_comment.addEventListener("click", function(){
   var n = count.value;
   var list = document.getElementById("comments");
-  if (n) {
-      tprComment =  list.innerHTML;
-      var newBlock = document.createElement("ul");
-      newBlock.className = "temp_comment comments";
-      newBlock.innerHTML = tprComment.replace(/something/g, agentFio.value);
-      newBlock.innerHTML = newBlock.innerHTML.replace(/number/g, login.value);
-      newBlock.innerHTML = newBlock.innerHTML.replace(/tp/g, tp.value);
-      newBlock.innerHTML = newBlock.innerHTML.replace(/apl/g, ap.value);
-      newBlock.style.display = "block";
-      document.querySelector(".information").appendChild(newBlock);
-    } else {
-      list.style.display = "block";
-    }
+  if (tprComment != ""){document.querySelector(".information .temp_comment").remove();}
+    if (n) {
+        tprComment =  list.innerHTML;
+        var newBlock = document.createElement("ul");
+        newBlock.className = "temp_comment comments";
+        newBlock.innerHTML = tprComment.replace(/something/g, agentFio.value);
+        newBlock.innerHTML = newBlock.innerHTML.replace(/number/g, login.value);
+        newBlock.innerHTML = newBlock.innerHTML.replace(/tp/g, tp.value);
+        newBlock.innerHTML = newBlock.innerHTML.replace(/apl/g, ap.value);
+        newBlock.style.display = "block";
+        document.querySelector(".information").appendChild(newBlock);
+      } else {
+        list.style.display = "block";
+      }
 });
 
 
