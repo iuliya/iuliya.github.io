@@ -11,10 +11,10 @@ body {
 
 .content{
   position: absolute;
-  width: 984px;
+  width: 1174px; /*984px;*/
   left: 50%;
   margin-top:50px;
-  margin-left: -492px;
+  margin-left: -587px; /*-492px;*/
   border-radius: 50px;
   box-shadow: 0 0 37px 30px #fff;
   background-color: white;
@@ -36,24 +36,24 @@ body {
 
 .filter {
   float: left;
-  width: 400px;
+  width: 490px; /*400px;*/
   padding-left: 10px;
   padding-right: 24px;
 }
 
 .filter_item {
   display: block;
-  margin: 10px 0;
+  margin: 5px 0;
   color: #35422e;
 }
 
-.filter_item .for_edit {
+.filter_item input[type=text] {
   padding: 1px 2px;
   border: 1px dotted #35422e;
   border-radius: 5px;
 }
 
-.filter_item .count:focus {
+.filter_item input[type=text]:focus {
   padding: 5px;
   outline: none;
   /*outline: 1px dotted #35422e;*/
@@ -135,7 +135,6 @@ body {
 }
 
 .temp_block{
-  display: block;
   padding: 0;
   list-style: none;
 }

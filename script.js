@@ -7,6 +7,7 @@ var showList,
     btn_comment = document.getElementById("btn_comment"),
     inputs = document.getElementsByTagName("input"),
     err = document.querySelector(".error"),
+    errorCode = document.getElementById("error_code"),
     count = document.getElementById("count"),
     agentFio = document.getElementById("agentFio"),
     login = document.getElementById("login"),
@@ -45,6 +46,10 @@ count.addEventListener("change", function(){
   console.log(count.value);
 });
 
+errorCode.addEventListener("change", function(){
+  console.log(count.value);
+});
+
 agentFio.addEventListener("change", function(){
   console.log(agentFio.value);
 });
@@ -71,11 +76,17 @@ btn_result.addEventListener("click", function(){
       document.querySelector(".information .temp_block").remove();
     }
     var n = count.value;
-    if (count.value) {
+    if (count.value || errorCode.value) {
       tprList =  list.innerHTML;
       var newList = document.createElement("ul");
       newList.className = "temp_block";
-      newList.innerHTML = tprList.replace(/:х/g, ":" + count.value);
+      newList.innerHTML = tprList;
+      if (count.value) {
+        newList.innerHTML = newList.innerHTML.replace(/:х/g, ":" + count.value);
+      }
+      if (errorCode.value) {
+        newList.innerHTML = newList.innerHTML.replace(/error_code/g, errorCode.value);
+      }
       newList.style.display = "block";
       document.querySelector(".information").insertBefore(newList, document.getElementById("comments"));
     } else {
@@ -90,7 +101,9 @@ btn_result.addEventListener("click", function(){
 btn_comment.addEventListener("click", function(){
   var n = count.value;
   var list = document.getElementById("comments");
-  if (tprComment != ""){document.querySelector(".information .temp_comment").remove();}
+  if (document.querySelector(".information .temp_comment")){
+    document.querySelector(".information .temp_comment").remove();
+  }
     if (n) {
         tprComment =  list.innerHTML;
         var newBlock = document.createElement("ul");
@@ -126,9 +139,9 @@ btn_reset.addEventListener("click", function(){
   document.getElementById("btn_comment").classList.add("invisible");
   document.getElementById("classification").classList.remove("invisible");
   document.getElementById("forEdit").classList.add("invisible");
-  if (count.value) {
-    document.querySelector(".information .temp_comment").remove();
+  if (count.value || errorCode.value) {
     document.querySelector(".information .temp_block").remove();
+    if (count.value) document.querySelector(".information .temp_comment").remove();  
   }  else {
     document.getElementById("comments").style.display = "none";
   }

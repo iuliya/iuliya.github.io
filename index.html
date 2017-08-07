@@ -30,33 +30,37 @@
           <label><input type="radio" name="category" value="_in">ИН</label>
         </div>
         <div class="filter_item" id="classification">
-          <h2 class="filter_item_title">Про что?</h2><br/>
+          <h2 class="filter_item_title">Про что?</h2>
           <label><input type="radio" name="classification" value="_setup">установка</label>
           <label><input type="radio" name="classification" value="_remove">снятие</label>
           <label><input type="radio" name="classification" value="_access">доступ</label>
           <label><input type="radio" name="classification" value="_ko">КО</label>
           <label><input type="radio" name="classification" value="_other">другое</label>
         </div>
+        <div class="filter_item">
+          <h2 class="filter_item_title">Ошибка СА?</h2>
+          <label><input type="text" name="code" value="" id="error_code"></label>
+        </div>
         <div class="filter_item  invisible" id="forEdit">
             <label>
               <h2 class="filter_item_title">Количество</h2>
-              <input type="text" value="" id="count" class="for_edit">
+              <input type="text" value="" id="count">
             </label><br/>
             <label>
               <h2 class="filter_item_title">Прописала</h2>
-              <input type="text" value="" id="agentFio" class="for_edit">
+              <input type="text" value="" id="agentFio">
             </label><br/>
             <label>
               <h2 class="filter_item_title">Логин</h2>
-              <input type="text" value="" id="login" class="for_edit">
+              <input type="text" value="" id="login">
             </label><br/>
             <label>
               <h2 class="filter_item_title">ТП</h2>
-              <input type="text" value="" id="tp" class="for_edit">
+              <input type="text" value="" id="tp">
             </label><br/>
             <label>
               <h2 class="filter_item_title">АП</h2>
-              <input type="text" value="" id="ap" class="for_edit">
+              <input type="text" value="" id="ap">
             </label>
         </div>
         <div class="buttons">
@@ -189,16 +193,16 @@
             <li>ТПЛ:ЛИРА:ИН:смена пароля.</li>
         </ul>
         <ul id="tpl_hpsa_zo">
-          <li>ТПЛ:HPSA:ЗО:код ошибки:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ЗО:error_code:тип наряда(операция).</li>
         </ul>
         <ul id="tpl_hpsa_vp">
-          <li>ТПЛ:HPSA:ВП:код ошибки:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ВП:error_code:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-20002:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-130:тип наряда(операция).</li>
           <li>ТПЛ:HPSA:ВП:-49999:тип наряда(операция).</li>
         </ul>
         <ul id="tpl_hpsa_in">
-          <li>ТПЛ:HPSA:ИН:код ошибки:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ИН:error_code:тип наряда(операция).</li>
         </ul>
         <ul id="tpr_lira_zo">
           <li>ТПР:ЛИРА:ЗО:смена канала продаж:х.</li>
@@ -207,8 +211,8 @@
           <li>ТПР:ЛИРА:ЗО:база данных:х.</li>
           <li>ТПР:ЛИРА:ЗО:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ЗО:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ЗО:исключение HPSA:код ошибки:тип наряда установка:х.</li>
-          <li>ТПР:ЛИРА:ЗО:исключение HPSA:код ошибки:тип наряда снятие:х.</li>
+          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:тип наряда установка:х.</li>
+          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:тип наряда снятие:х.</li>
           <li>ТПР:ЛИРА:ЗО:снятие кодом2:х.</li>
           <li>ТПР:ЛИРА:ЗО:корректировка признака складов:х.</li>
         </ul>
@@ -222,8 +226,8 @@
           <li>ТПР:ЛИРА:ВП:база данных:х.</li>
           <li>ТПР:ЛИРА:ВП:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ВП:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ВП:исключение HPSA:код ошибки:тип наряда установка:х.</li>
-          <li>ТПР:ЛИРА:ВП:исключение HPSA:код ошибки:тип наряда снятие:х.</li>
+          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:тип наряда установка:х.</li>
+          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:тип наряда снятие:х.</li>
           <li>ТПР:ЛИРА:ВП:снятие кодом2:х.</li>
         </ul>
         <ul id="tpr_sdp_vp">
@@ -233,7 +237,7 @@
           <li>ТПР:ЛИРА:ИН:база данных:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ИН:исключение HPSA:код ошибки:тип наряда(операция):х.</li>
+          <li>ТПР:ЛИРА:ИН:исключение HPSA:error_code:тип наряда(операция):х.</li>
           <li>ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
         </ul>
         <ul id="tpl_eissd_zo_setup">
@@ -332,7 +336,7 @@
               Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
           </li>
           <li>Поставлена отметка об исполнении в HPSA.
-              Передавайте наряд по сх. прохождения для отработки тех. службой  в ручном режиме.
+              Передавайте наряды по сх. прохождения для отработки тех. службой  в ручном режиме.
           </li>
           <li>Поставлена отметка об исполнении в ПС.</li>
           <li>Поставлена отметка об исполнении в Аргусе.</li>
