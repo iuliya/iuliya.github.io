@@ -58,10 +58,12 @@ body {
   outline: none;
 }
 
-.filter_item input[type=text]:focus {
+.filter_item input[type=text]:focus,
+.filter_item select:focus {
   padding: 5px;
   outline: none;
-  /*outline: 1px dotted #35422e;*/
+  border-style: solid;
+  box-shadow: 0 0 4px 0px #35422e;
 }
 
 .filter_item_title {
