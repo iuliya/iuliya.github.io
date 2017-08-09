@@ -47,10 +47,15 @@ body {
   color: #35422e;
 }
 
-.filter_item input[type=text] {
+.filter_item input[type=text],
+.filter_item select {
   padding: 1px 2px;
   border: 1px dotted #35422e;
   border-radius: 5px;
+}
+
+.filter_item select:checked {
+  outline: none;
 }
 
 .filter_item input[type=text]:focus {

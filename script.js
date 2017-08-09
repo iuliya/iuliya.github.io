@@ -2,12 +2,13 @@ var showList,
     direction = document.getElementsByName("direction"),
     system = document.getElementsByName("system"),
     category = document.getElementsByName("category"),
-    classification = document.getElementsByName("classification"),
+    classification = document.getElementById("classification"),
     btn_result = document.getElementById("btn_result"),
     btn_comment = document.getElementById("btn_comment"),
     inputs = document.getElementsByTagName("input"),
     err = document.querySelector(".error"),
-    errorCode = document.getElementById("error_code"),
+    codeOfError  = document.getElementById("codeOfError "),
+    typeOfOrder = document.getElementById("typeOfOrder"),
     count = document.getElementById("count"),
     agentFio = document.getElementById("agentFio"),
     login = document.getElementById("login"),
@@ -38,6 +39,9 @@ function isCheck(arr, elem){
         document.getElementById("classification").classList.remove("invisible");
         document.getElementById("forEdit").classList.add("invisible");
       }
+      if (this.value == "_hpsa"){
+        document.getElementById("classification").classList.add("invisible");
+      }
   });
 
 }
@@ -46,7 +50,11 @@ count.addEventListener("change", function(){
   console.log(count.value);
 });
 
-errorCode.addEventListener("change", function(){
+typeOfOrder.addEventListener("change", function(){
+  console.log(count.value);
+});
+
+codeOfError .addEventListener("change", function(){
   console.log(count.value);
 });
 
@@ -76,16 +84,20 @@ btn_result.addEventListener("click", function(){
       document.querySelector(".information .temp_block").remove();
     }
     var n = count.value;
-    if (count.value || errorCode.value) {
-      tprList =  list.innerHTML;
+    if (count.value || codeOfError .value || typeOfOrder.value) {
+      //tprList =  list.innerHTML;
       var newList = document.createElement("ul");
       newList.className = "temp_block";
-      newList.innerHTML = tprList;
+      //newList.innerHTML = tprList;
+      newList.innerHTML = list.innerHTML;
       if (count.value) {
         newList.innerHTML = newList.innerHTML.replace(/:х/g, ":" + count.value);
       }
-      if (errorCode.value) {
-        newList.innerHTML = newList.innerHTML.replace(/error_code/g, errorCode.value);
+      if (codeOfError .value) {
+        newList.innerHTML = newList.innerHTML.replace(/error_code/g, codeOfError .value);
+      }
+      if (typeOfOrder.value) {
+        newList.innerHTML = newList.innerHTML.replace(/order/g, typeOfOrder.value);
       }
       newList.style.display = "block";
       document.querySelector(".information").insertBefore(newList, document.getElementById("comments"));
@@ -139,9 +151,9 @@ btn_reset.addEventListener("click", function(){
   document.getElementById("btn_comment").classList.add("invisible");
   document.getElementById("classification").classList.remove("invisible");
   document.getElementById("forEdit").classList.add("invisible");
-  if (count.value || errorCode.value) {
+  if (count.value || codeOfError .value) {
     document.querySelector(".information .temp_block").remove();
-    if (count.value) document.querySelector(".information .temp_comment").remove();  
+    if (count.value) document.querySelector(".information .temp_comment").remove();
   }  else {
     document.getElementById("comments").style.display = "none";
   }

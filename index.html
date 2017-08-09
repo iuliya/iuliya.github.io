@@ -38,8 +38,18 @@
           <label><input type="radio" name="classification" value="_other">другое</label>
         </div>
         <div class="filter_item">
-          <h2 class="filter_item_title">Ошибка СА?</h2>
-          <label><input type="text" name="code" value="" id="error_code"></label>
+          <h2 class="filter_item_title">Ошибка СА</h2>
+          <label><input type="text" name="code_error" value="" id="codeOfError "></label>
+        </div>
+        <div class="filter_item">
+          <h2 class="filter_item_title">Тип наряда</h2>
+          <!--label><input type="text" name="type-order" value="" id="typeOfOrder"></label-->
+          <select id="typeOfOrder">
+            <option>установка</option>
+            <option>снятие</option>
+            <option>аннулирование установки</option>
+            <option>аннулирование снятия</option>
+          </select>
         </div>
         <div class="filter_item  invisible" id="forEdit">
             <label>
@@ -71,6 +81,7 @@
       </form>
 
       <div class="information"> <!-- begin informaion -->
+        <div id="tpl_lira_zo">
         <ul id="tpl_lira_zo_setup">
           <li>ТПЛ:ЛИРА:ЗО:установка СОП.</li>
           <li>ТПЛ:ЛИРА:ЗО:установка СПД.</li>
@@ -112,6 +123,7 @@
           <li>ТПЛ:ЛИРА:ЗО:смена пароля.</li>
           <li>ТПЛ:ЛИРА:ЗО:блокирование.</li>
         </ul>
+      </div>
         <ul id="tpl_ekm_zo">
           <li>ТПЛ:ЕКМ:ЗО:добавление ЦПО.</li>
         </ul>
@@ -193,16 +205,16 @@
             <li>ТПЛ:ЛИРА:ИН:смена пароля.</li>
         </ul>
         <ul id="tpl_hpsa_zo">
-          <li>ТПЛ:HPSA:ЗО:error_code:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ЗО:error_code:order.</li>
         </ul>
         <ul id="tpl_hpsa_vp">
-          <li>ТПЛ:HPSA:ВП:error_code:тип наряда(операция).</li>
-          <li>ТПЛ:HPSA:ВП:-20002:тип наряда(операция).</li>
-          <li>ТПЛ:HPSA:ВП:-130:тип наряда(операция).</li>
-          <li>ТПЛ:HPSA:ВП:-49999:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ВП:error_code:order.</li>
+          <li>ТПЛ:HPSA:ВП:-20002:order.</li>
+          <li>ТПЛ:HPSA:ВП:-130:order.</li>
+          <li>ТПЛ:HPSA:ВП:-49999:order.</li>
         </ul>
         <ul id="tpl_hpsa_in">
-          <li>ТПЛ:HPSA:ИН:error_code:тип наряда(операция).</li>
+          <li>ТПЛ:HPSA:ИН:error_code:order.</li>
         </ul>
         <ul id="tpr_lira_zo">
           <li>ТПР:ЛИРА:ЗО:смена канала продаж:х.</li>
@@ -211,8 +223,8 @@
           <li>ТПР:ЛИРА:ЗО:база данных:х.</li>
           <li>ТПР:ЛИРА:ЗО:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ЗО:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:тип наряда установка:х.</li>
-          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:тип наряда снятие:х.</li>
+          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:order:х.</li>
+          <li>ТПР:ЛИРА:ЗО:исключение HPSA:error_code:order:х.</li>
           <li>ТПР:ЛИРА:ЗО:снятие кодом2:х.</li>
           <li>ТПР:ЛИРА:ЗО:корректировка признака складов:х.</li>
         </ul>
@@ -226,8 +238,8 @@
           <li>ТПР:ЛИРА:ВП:база данных:х.</li>
           <li>ТПР:ЛИРА:ВП:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ВП:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:тип наряда установка:х.</li>
-          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:тип наряда снятие:х.</li>
+          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:order:х.</li>
+          <li>ТПР:ЛИРА:ВП:исключение HPSA:error_code:order:х.</li>
           <li>ТПР:ЛИРА:ВП:снятие кодом2:х.</li>
         </ul>
         <ul id="tpr_sdp_vp">
@@ -237,7 +249,7 @@
           <li>ТПР:ЛИРА:ИН:база данных:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение ПС:х.</li>
           <li>ТПР:ЛИРА:ИН:исключение СТУ:х.</li>
-          <li>ТПР:ЛИРА:ИН:исключение HPSA:error_code:тип наряда(операция):х.</li>
+          <li>ТПР:ЛИРА:ИН:исключение HPSA:error_code:order:х.</li>
           <li>ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
         </ul>
         <ul id="tpl_eissd_zo_setup">
