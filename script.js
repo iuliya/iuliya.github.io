@@ -15,6 +15,13 @@ var showList,
     tp = document.getElementById("tp"),
     ap = document.getElementById("ap"),
     idList = oldList = tprList = tprComment ="";
+
+    /*
+var d = document.getElementsByName("direction");
+d.forEach(function(item, d){if (item.checked) {console.log(item.value)}});
+
+//просто выводит чекнутый элемент
+*/
     
     isCheck(inputs);
     //isCheck(direction);
