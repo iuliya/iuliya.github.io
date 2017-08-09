@@ -15,11 +15,12 @@ var showList,
     tp = document.getElementById("tp"),
     ap = document.getElementById("ap"),
     idList = oldList = tprList = tprComment ="";
-
-    isCheck(direction);
-    isCheck(system);
-    isCheck(category);
-    isCheck(classification);
+    
+    isCheck(inputs);
+    //isCheck(direction);
+    //isCheck(system);
+   /// isCheck(category);
+    //isCheck(classification);
 
 function isCheck(arr, elem){
   for (var i = 0; i < arr.length; i++)
