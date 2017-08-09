@@ -11,10 +11,10 @@ body {
 
 .content{
   position: absolute;
-  width: 1174px; /*984px;*/
+  width: 940px; /*984px;*/
   left: 50%;
   margin-top:50px;
-  margin-left: -587px; /*-492px;*/
+  margin-left: -50px; /*-492px;*/
   border-radius: 50px;
   box-shadow: 0 0 37px 30px #fff;
   background-color: white;
@@ -36,7 +36,7 @@ body {
 
 .filter {
   float: left;
-  width: 490px; /*400px;*/
+  width: 400px; /*400px;*/
   padding-left: 10px;
   padding-right: 24px;
 }
@@ -105,7 +105,7 @@ body {
 
 .information {
   float: right;
-  width: 550px;
+  width: 540px;
   min-height: 450px;
   /*border-left: 1px dotted #a2231d;*/
   background-image: url("img/fon-inf-380.png");
