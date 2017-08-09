@@ -105,7 +105,7 @@ body {
 
 .information {
   float: right;
-  width: 540px;
+  width: 505px;
   min-height: 450px;
   /*border-left: 1px dotted #a2231d;*/
   background-image: url("img/fon-inf-380.png");
