@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("img/fon1.jpg");
+  /*background-image: url("img/bg_1920w.jpg");
+  background-size: 100%;*/
   font-family: monospace;
   font-size: 16px;
   color: #a2231d;
@@ -9,21 +10,23 @@ body {
   color: #fff;*/
 }
 
-.content{
-  position: absolute;
-  width: 940px; /*984px;*/
+.content-wrapper{
+  padding: 20px;
+  /*position: absolute;
+  width: 940px;
   left: 50%;
   margin-top:50px;
-  margin-left: -470px; /*-492px;*/
+  margin-left: -50%;
   border-radius: 50px;
   box-shadow: 0 0 37px 30px #fff;
   background-color: white;
-  opacity: 0.95;
+  opacity: 0.95;*/
 }
 
 .page-title{
   margin: 0;
-  text-align: center;
+  margin-left: 300px;
+  /*text-align: center;*/
   text-transform: uppercase;
   font-family: 'Bad Script';
 }
@@ -36,7 +39,7 @@ body {
 
 .filter {
   float: left;
-  width: 400px; /*400px;*/
+  width: 430px; /*400px;*/
   padding-left: 10px;
   padding-right: 24px;
 }
@@ -60,13 +63,16 @@ body {
 
 .filter_item input[type=text]:focus,
 .filter_item select:focus {
-  padding: 5px;
   outline: none;
   border-style: solid;
-  box-shadow: 0 0 4px 0px #35422e;
+  box-shadow: 0 0 4px 0px #35422e;/*1px solid #35422e;*/
 }
 
-.filter_item_title {
+/*.filter_item select {
+  outline: none;
+}*/
+
+.filter_item-title {
   display: inline-block;
   margin: 5px 0;
   border-bottom: 1px dotted #a2231d;
@@ -106,13 +112,14 @@ body {
 }
 
 .information {
-  float: right;
-  width: 505px;
-  min-height: 450px;
+  float: left;
+  width: 550px;
+  /*float: right;
+  min-height: 450px;*/
   /*border-left: 1px dotted #a2231d;*/
-  background-image: url("img/fon-inf-380.png");
+  /*background-image: url("img/fon-inf-380.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
   text-align: center;
 }
 
@@ -122,7 +129,7 @@ body {
  list-style: none;
 }
 
-.information .comments {
+.information .comments{
   border-top: 1px dotted #35422e;
   padding-top: 10px;
   text-align: left;
@@ -131,6 +138,14 @@ body {
 
 .information .comments li {
   margin: 5px 0;
+}
+
+.information-title {
+  display: inline-block;
+  margin: 5px 0;
+  text-align: center;
+  font-family: 'Bad Script';
+  color: #a2231d;
 }
 
 .error {

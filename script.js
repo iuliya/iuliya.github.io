@@ -1,12 +1,130 @@
-var showList,
-    direction = document.getElementsByName("direction"),
+(function() {
+
+  var btnResult = document.getElementById("btn_result"),
+      btnComment = document.getElementById("btn_comment"),
+      btnSolution = document.getElementById("btn_solution"),
+      radioButtons = document.querySelectorAll("input[type=radio]");
+
+  var codeOfError  = document.getElementById("codeOfError "),
+      typeOfOrder = document.getElementById("typeOfOrder"),
+      numberOfOrder = document.getElementById("numberOfOrder"),
+      count = document.getElementById("count"),
+      other = document.getElementById("other"),
+      login = document.getElementById("login"),
+      tp = document.getElementById("tp"),
+      ap = document.getElementById("ap");
+
+  var idBlock = "",
+      direction = "tpl", system, category, classification;
+
+  for (var i = 0; i < radioButtons.length; i++)
+    radioButtons[i].addEventListener("change", function(){
+       if (this.checked)
+        switch(this.name){
+          case("direction"):{
+            if (direction == "tpl" && this.value == "tpr"){
+              document.getElementById("forEdit").classList.remove("invisible");
+              document.getElementById("classification").classList.add("invisible");
+            }
+            if (direction == "tpr" && this.value == "tpl"){
+              document.getElementById("forEdit").classList.add("invisible");
+              document.getElementById("classification").classList.remove("invisible");
+            }
+            direction = this.value;
+            break;
+          }
+          case("system"):{
+            if (system != "Hpsa" && this.value == "Hpsa"){
+              document.getElementById("classification").classList.add("invisible");
+            }
+            if (system == "Hpsa" && this.value != "Hpsa"){
+              document.getElementById("classification").classList.remove("invisible");
+            }
+            system = this.value;
+            break;
+          }
+          case("category"):{
+            category = this.value;
+            break;
+          }
+          case("classification"):{
+            classification = this.value;
+            break;
+          }
+          default:{}
+        }
+    });
+
+  btnResult.addEventListener("click", function(){
+    if (direction == "tpr" || system == "Hpsa") {
+      console.log("system " + system);
+      idBlock = direction + system + category;
+    }
+    if (direction == "tpl" && system != "Hpsa") idBlock = direction + system + category + classification;
+    console.log(idBlock);
+
+    var list = document.getElementById(idBlock);
+    var newList = document.createElement("ul");
+    newList.className = "temp_block";
+    newList.innerHTML = list.innerHTML;
+
+
+    if (document.querySelector(".temp_block")) {
+      document.querySelector(".information").removeChild(document.querySelector(".temp_block"));
+    }
+    if (codeOfError.value) {
+      newList.innerHTML = newList.innerHTML.replace(/error_code/g, codeOfError.value);
+    }
+    if (typeOfOrder.value) {
+      newList.innerHTML = newList.innerHTML.replace(/type_order/g, typeOfOrder.value);
+    }
+    if (count.value) {
+      newList.innerHTML = newList.innerHTML.replace(/:х/g, ":" + count.value);
+    }
+
+    newList.style.display = "block";
+    document.querySelector(".information").insertBefore(newList, document.getElementById("tmpCommentsForTpr"));
+
+  });
+
+
+  btnComment.addEventListener("click", function(){
+
+    var list = document.getElementById("tmpCommentsForTpr");
+    var newList = document.createElement("ul");
+    newList.className = "temp_comment comments";
+    newList.innerHTML = list.innerHTML;
+    newList.innerHTML = newList.innerHTML.replace(/number_order/g, numberOfOrder.value);
+    newList.innerHTML = newList.innerHTML.replace(/something/g, other.value);
+    newList.innerHTML = newList.innerHTML.replace(/number/g, login.value);
+    newList.innerHTML = newList.innerHTML.replace(/tp/g, tp.value);
+    newList.innerHTML = newList.innerHTML.replace(/apl/g, ap.value);
+
+    if (document.querySelector(".temp_comment")) {
+      document.querySelector(".temp_comment").remove();
+    }
+
+    newList.style.display = "block";
+    document.querySelector(".information").insertBefore(newList, document.getElementById("tmpSolution"));
+
+  });
+
+  btnSolution.addEventListener("click", function(){
+    document.getElementById("tmpSolution").style.display = "block";
+  });
+
+})();
+
+
+
+/**var direction = document.getElementsByName("direction"),
     system = document.getElementsByName("system"),
     category = document.getElementsByName("category"),
-    classification = document.getElementById("classification"),
+    classification = document.getElementsByName("classification"),
     btn_result = document.getElementById("btn_result"),
     btn_comment = document.getElementById("btn_comment"),
-    inputs = document.getElementsByTagName("input"),
-    err = document.querySelectorAll("input[type=radio]"),
+    inputs = document.querySelectorAll("input[type=radio]"),
+    err = document.querySelector(".error"),
     codeOfError  = document.getElementById("codeOfError "),
     typeOfOrder = document.getElementById("typeOfOrder"),
     count = document.getElementById("count"),
@@ -14,22 +132,23 @@ var showList,
     login = document.getElementById("login"),
     tp = document.getElementById("tp"),
     ap = document.getElementById("ap"),
-    idList = oldList = tprList = tprComment ="";
+    idList = oldIdList = tprList = tprComment ="";
 
-    /*
+    isCheck(inputs);
+  /*  isCheck(direction);
+    isCheck(system);
+    isCheck(category);
+    isCheck(classification); */
+
+
+/*
 var d = document.getElementsByName("direction");
 d.forEach(function(item, d){if (item.checked) {console.log(item.value)}});
 
 //просто выводит чекнутый элемент
 */
-    
-    isCheck(inputs);
-    //isCheck(direction);
-    //isCheck(system);
-   /// isCheck(category);
-    //isCheck(classification);
 
-function isCheck(arr, elem){
+/**function isCheck(arr, elem){
   for (var i = 0; i < arr.length; i++)
     arr[i].addEventListener("change", function(){
       this.setAttribute("checked", true);
@@ -49,6 +168,9 @@ function isCheck(arr, elem){
       }
       if (this.value == "_hpsa"){
         document.getElementById("classification").classList.add("invisible");
+      }
+      if (this.value == "_setup"){
+        console.log("тип "+ this.value + "весь ид" + idList);
       }
   });
 
@@ -141,13 +263,13 @@ btn_comment.addEventListener("click", function(){
 
 
 btn_reset.addEventListener("click", function(){
-  console.log(idList);
-  console.log(oldList);
+  console.log("idList " + idList);
+  console.log("oldList " + oldList);
   idList = "";
   var list = document.getElementById(oldList);
   if (oldList){
       list.style.display = "none";
-      list.innerText = tprList;
+      //list.innerText = tprList;
       document.querySelector(".information").style.backgroundPosition = "center"
   } else {
       err.style.display="none";
@@ -165,4 +287,4 @@ btn_reset.addEventListener("click", function(){
   }  else {
     document.getElementById("comments").style.display = "none";
   }
-});
+});**/
