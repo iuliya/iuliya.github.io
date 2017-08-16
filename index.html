@@ -24,8 +24,8 @@
             <label><input type="radio" name="system" value="Lira" required>Лира</label>
             <label><input type="radio" name="system" value="Eissd" required>ЕИССД</label>
             <label><input type="radio" name="system" value="Hpsa" required>HPSA</label>
-            <label><input type="radio" name="system" value="Sdp" required>SDP</label>
-            <label><input type="radio" name="system" value="Ekm" required>ЕКМ</label>
+            <label class="invisible"><input type="radio" name="system" value="Sdp" required>SDP</label>
+            <!--label><input type="radio" name="system" value="Ekm" required>ЕКМ</label-->
           </div>
           <div class="filter_item" id="category">
             <h3 class="filter_item-title">Категрия</h3>
@@ -77,9 +77,9 @@
               <input type="text" value="" id="ap">
             </label>
             <select id="apAction">
-              <option value="" selected>прописала</option>
-              <option value="">удалила</option>
-              <option value="">заменила</option>
+              <option value="прописала">прописала</option>
+              <option value="удалила">удалила</option>
+              <option value="заменила">заменила</option>
             </select><br/>
             <label>
               <h2 class="filter_item-title">Другое</h3>
@@ -87,10 +87,10 @@
             </label>
           </div>
           <div class="buttons">
-            <button type="button" id="btn_result" value="1">OK</button>
+            <button type="button" id="btn_result" value="1">Кодики</button>
             <button type="button" id="btn_comment" value="2">Kоммент</button>
             <button type="button" id="btn_solution" value="3">Решение</button>
-            <button type="reset" id="btn_reset" value="4">Не OK</button>
+            <button type="reset" id="btn_reset" value="4">Все свободны</button>
           </div>
         </form>
         <!-- end filter -->
@@ -152,6 +152,12 @@
           <li>ТПЛ:ЕИССД:ЗО:снятие СПД.</li>
           <li>ТПЛ:ЕИССД:ЗО:снятие ДБ.</li>
         </ul>
+        <ul id="tplEissdZoAccess">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
+        <ul id="tplEissdZoKo">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
         <ul id="tplEissdZoOther">
           <li>ТПЛ:ЕИССД:ЗО:канал продаж.</li>
           <li>ТПЛ:ЕИССД:ЗО:смена продавца.</li>
@@ -169,9 +175,6 @@
           <li>ТПЛ:ЕИССД:ЗО:оборудование.</li>
           <li>ТПЛ:ЕИССД:ЗО:права доступа.</li>
           <li>ТПЛ:ЕИССД:ЗО:разблокировка.</li>
-        </ul>
-        <ul id="tplEkmZo">
-          <li>ТПЛ:ЕКМ:ЗО:добавление ЦПО.</li>
         </ul>
         <ul id="tplHpsaZo">
           <li>ТПЛ:HPSA:ЗО:error_code:type_order.</li>
@@ -245,6 +248,12 @@
           <li>ТПЛ:ЕИССД:ВП:права доступа.</li>
           <li>ТПЛ:ЕИССД:ВП:разблокировка.</li>
         </ul>
+        <ul id="tplEissdVpAccess">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
+        <ul id="tplEissdVpKo">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
         <ul id="tplHpsaVp">
           <li>ТПЛ:HPSA:ВП:error_code:type_order.</li>
           <li>ТПЛ:HPSA:ВП:-20002:type_order.</li>
@@ -310,8 +319,17 @@
           <li>ТПЛ:ЕИССД:ИН:замена sim-карты.</li>
           <li>ТПЛ:ЕИССД:ИН:проверка техвозможности+доп обследование.</li>
           <li>ТПЛ:ЕИССД:ИН:переоформление mvno.</li>
-          <li>ТПЛ:ЕИССД:ИН:праcvsdва доступа.</li>
+          <li>ТПЛ:ЕИССД:ИН:права доступа.</li>
           <li>ТПЛ:ЕИССД:ИН:разблокировка.</li>
+        </ul>
+        <ul id="tplEissdInAccess">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
+        <ul id="tplEissdInKo">
+          <li>Таких кодиков еще не придумали(</li>
+        </ul>
+        <ul id="tplEissdInSetup">
+          <li>Таких кодиков еще не придумали(</li>
         </ul>
         <ul id="tplHpsaIn">
           <li>ТПЛ:HPSA:ИН:error_code:type_order.</li>
@@ -353,8 +371,11 @@
           <li>ТПР:ЛИРА:ИН:снятие кодом2:х.</li>
         </ul>
 
-        <ul id="sasp">
+        <ul id="unsorted">
           <li>ТПЛ:САСП:ВП:некорректно выбрана услуга.</li>
+          <li>ТПЛ:ЛИРА:ЗО:согласование.</li>
+          <li>ТПЛ:ЕКМ:ЗО:добавление ЦПО.</li>
+          <li>ТПЛ:ЕИССД:ЗО:подключение MVNO.</li>
         </ul>
 
         <ul id="tmpCommentsForTpr" class="comments">
@@ -379,7 +400,7 @@
           <li>Наряд уже аннулирован и находится в архиве.</li>
           <li>Наряд уже в архиве.</li>
           <li>Попробуйте еще раз создать наряд.</li>
-          <li>Попробуйте еще раз исполнить наряд наряд.</li>
+          <li>Попробуйте еще раз исполнить наряд.</li>
           <li></li>
           <li></li>
         </ul>

@@ -1,6 +1,7 @@
 (function() {
 
-  var btnResult = document.getElementById("btn_result"),
+  var btnReset = document.getElementById("btn_reset"),
+      btnResult = document.getElementById("btn_result"),
       btnComment = document.getElementById("btn_comment"),
       btnSolution = document.getElementById("btn_solution"),
       radioButtons = document.querySelectorAll("input[type=radio]");
@@ -12,7 +13,8 @@
       other = document.getElementById("other"),
       login = document.getElementById("login"),
       tp = document.getElementById("tp"),
-      ap = document.getElementById("ap");
+      ap = document.getElementById("ap"),
+      apAction = document.getElementById("apAction");
 
   var idBlock = "",
       direction = "tpl", system, category, classification;
@@ -25,12 +27,29 @@
             if (direction == "tpl" && this.value == "tpr"){
               document.getElementById("forEdit").classList.remove("invisible");
               document.getElementById("classification").classList.add("invisible");
+              var systems = document.querySelectorAll("#system label");
+              systems[1].classList.add("invisible");
+              systems[2].classList.add("invisible");
+              systems[3].classList.remove("invisible");
+
+              var categories = document.querySelectorAll("#category label");
+              categories[2].classList.add("invisible");
+              console.log("скрыли");
             }
             if (direction == "tpr" && this.value == "tpl"){
               document.getElementById("forEdit").classList.add("invisible");
               document.getElementById("classification").classList.remove("invisible");
+              var systems = document.querySelectorAll("#system label");
+              systems[1].classList.remove("invisible");
+              systems[2].classList.remove("invisible");
+              systems[3].classList.add("invisible");
+
+              var categories = document.querySelectorAll("#category label");
+              categories[2].classList.remove("invisible");
+              console.log("открыли");
             }
             direction = this.value;
+            console.log(direction);
             break;
           }
           case("system"):{
@@ -41,14 +60,17 @@
               document.getElementById("classification").classList.remove("invisible");
             }
             system = this.value;
+            console.log(system);
             break;
           }
           case("category"):{
             category = this.value;
+            console.log(category);
             break;
           }
           case("classification"):{
             classification = this.value;
+            console.log(classification);
             break;
           }
           default:{}
@@ -56,11 +78,10 @@
     });
 
   btnResult.addEventListener("click", function(){
-    if (direction == "tpr" || system == "Hpsa") {
-      console.log("system " + system);
-      idBlock = direction + system + category;
-    }
+
+    if (direction == "tpr" || system == "Hpsa") idBlock = direction + system + category;
     if (direction == "tpl" && system != "Hpsa") idBlock = direction + system + category + classification;
+    //else idBlock = "unsorted";
     console.log(idBlock);
 
     var list = document.getElementById(idBlock);
@@ -70,7 +91,7 @@
 
 
     if (document.querySelector(".temp_block")) {
-      document.querySelector(".information").removeChild(document.querySelector(".temp_block"));
+      document.querySelector(".temp_block").remove();
     }
     if (codeOfError.value) {
       newList.innerHTML = newList.innerHTML.replace(/error_code/g, codeOfError.value);
@@ -99,6 +120,7 @@
     newList.innerHTML = newList.innerHTML.replace(/number/g, login.value);
     newList.innerHTML = newList.innerHTML.replace(/tp/g, tp.value);
     newList.innerHTML = newList.innerHTML.replace(/apl/g, ap.value);
+    newList.innerHTML = newList.innerHTML.replace(/action/g, apAction.value);
 
     if (document.querySelector(".temp_comment")) {
       document.querySelector(".temp_comment").remove();
@@ -111,6 +133,25 @@
 
   btnSolution.addEventListener("click", function(){
     document.getElementById("tmpSolution").style.display = "block";
+  });
+
+  btnReset.addEventListener("click", function(){
+
+    document.getElementById(idBlock).remove();
+    document.querySelector(".temp_block").remove();
+    document.querySelector(".temp_comment").remove();
+    document.getElementById("tmpSolution").style.display = "none";
+    document.getElementById("classification").classList.remove("invisible");
+    document.getElementById("forEdit").classList.add("invisible");
+
+    var systems = document.querySelectorAll("#system label");
+    systems[1].classList.remove("invisible");
+    systems[2].classList.remove("invisible");
+    systems[3].classList.add("invisible");
+
+    var categories = document.querySelectorAll("#category label");
+    categories[2].classList.remove("invisible");
+
   });
 
 })();
