@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  /*background-image: url("img/bg_1920w.jpg");
+/*  background-image: url("bg-1920.jpg");
   background-size: 100%;*/
   font-family: monospace;
   font-size: 16px;
@@ -9,6 +9,10 @@ body {
   /*font-family: monospace;
   color: #fff;*/
 }
+
+/*.bg-trasparent {
+      background-color: rgba(0, 120, 201, 0.3);
+}*/
 
 .content-wrapper{
   padding: 20px;
@@ -21,6 +25,12 @@ body {
   box-shadow: 0 0 37px 30px #fff;
   background-color: white;
   opacity: 0.95;*/
+}
+
+.content-wrapper:after{
+  content: "";
+  display: block;
+  clear:both;
 }
 
 .page-title{
@@ -50,11 +60,32 @@ body {
   color: #35422e;
 }
 
+.filter_item-edit {
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.filter_item-with_textarea {
+  vertical-align: top;
+}
+
+.filter_item-with_textarea textarea {
+    max-width: 291px;
+    word-wrap: normal;
+    max-height: 100px;
+    margin: 0px;
+  }
+
 .filter_item input[type=text],
-.filter_item select {
+.filter_item select,
+.filter_item textarea {
   padding: 1px 2px;
   border: 1px dotted #35422e;
-  border-radius: 5px;
+  /*border-radius: 5px;*/
+}
+
+.filter_item input[type=text]{
+  height: 17px;
 }
 
 .filter_item select:checked {
@@ -62,7 +93,8 @@ body {
 }
 
 .filter_item input[type=text]:focus,
-.filter_item select:focus {
+.filter_item select:focus,
+ .filter_item textarea:focus{
   outline: none;
   border-style: solid;
   box-shadow: 0 0 4px 0px #35422e;/*1px solid #35422e;*/
@@ -113,7 +145,7 @@ body {
 
 .information {
   float: left;
-  width: 550px;
+  width: 845px; /*550px;
   /*float: right;
   min-height: 450px;*/
   /*border-left: 1px dotted #a2231d;*/
@@ -156,7 +188,17 @@ body {
   color: #35422e;
 }
 
-.temp_block{
+.temp_block {
   padding: 0;
   list-style: none;
+}
+
+.temp_block li {
+  display: block;
+  margin: 10px 0;
+  text-align: start;
+}
+
+.temp_block li:nth-child(2n) {
+  color: #35422e;
 }
