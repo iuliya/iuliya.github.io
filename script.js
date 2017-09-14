@@ -105,6 +105,10 @@
       newList.innerHTML = newList.innerHTML.replace(/action_/g, action.value);
       newList.innerHTML = newList.innerHTML.replace(/actionWith_/g, actionWith.value);
       newList.innerHTML = newList.innerHTML.replace(/actionText_/g, actionText.value);
+      
+      var tmpPS = ps.checked?ps.value:"";
+      newList.innerHTML = newList.innerHTML.replace(/withPS/g, tmpPS);
+      
     }
 
     newList.style.display = "block";
