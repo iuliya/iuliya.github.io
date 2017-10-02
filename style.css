@@ -94,7 +94,7 @@ body {
   display: inline-block;
   margin: 5px 0;
   border-bottom: 1px dotted #a2231d;
-  font-family: 'Bad Script';
+  /*font-family: 'Bad Script';*/
   color: #a2231d;
 }
 
