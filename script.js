@@ -99,7 +99,7 @@
       newList.innerHTML = newList.innerHTML.replace(/type_order/g, typeOfOrder.value);
     }
     if (count.value) {
-      newList.innerHTML = newList.innerHTML.replace(/:КЛВх/g, ":" + count.value);
+      newList.innerHTML = newList.innerHTML.replace(/:КЛВх/g, ":КЛВ" + count.value);
       newList.innerHTML = newList.innerHTML.replace(/textForNumber/g, loginOrOrder.value);
       newList.innerHTML = newList.innerHTML.replace(/numberOf_/g, numberOf.value);
       newList.innerHTML = newList.innerHTML.replace(/action_/g, action.value);
