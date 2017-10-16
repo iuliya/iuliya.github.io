@@ -6,7 +6,7 @@
       btnSolution = document.getElementById("btn_solution"),
       radioButtons = document.querySelectorAll("input[type=radio]");
 
-  var codeOfError  = document.getElementById("codeOfError "),
+  var codeOfError  = document.getElementById("codeOfError"),
       typeOfOrder = document.getElementById("typeOfOrder"),
       loginOrOrder = document.getElementById("loginOrOrder"),
       numberOf = document.getElementById("numberOf"),
