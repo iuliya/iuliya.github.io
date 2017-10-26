@@ -99,16 +99,16 @@
       newList.innerHTML = newList.innerHTML.replace(/type_order/g, typeOfOrder.value);
     }
     if (count.value) {
-      newList.innerHTML = newList.innerHTML.replace(/:КЛВх/g, ":КЛВ" + count.value);
+      newList.innerHTML = newList.innerHTML.replace(/.КЛВх/g, ".КЛВ" + count.value);
       newList.innerHTML = newList.innerHTML.replace(/textForNumber/g, loginOrOrder.value);
       newList.innerHTML = newList.innerHTML.replace(/numberOf_/g, numberOf.value);
       newList.innerHTML = newList.innerHTML.replace(/action_/g, action.value);
       newList.innerHTML = newList.innerHTML.replace(/actionWith_/g, actionWith.value);
       newList.innerHTML = newList.innerHTML.replace(/actionText_/g, actionText.value);
-      
+
       var tmpPS = ps.checked?ps.value:"";
       newList.innerHTML = newList.innerHTML.replace(/withPS/g, tmpPS);
-      
+
     }
 
     newList.style.display = "block";
