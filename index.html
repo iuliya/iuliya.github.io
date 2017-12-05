@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>A-plus</title>
@@ -43,23 +43,39 @@
       </section>
       <section class="comments">
         <h2>Отзывы выпускников</h2>
+        <div>
+         <img src="img/photo.png" alt="Фото">
+          <h3>Иванов Петр Сергеевич</h3>
+          <p>Группа: 04-И-15<br/> Выпуск: 2009 г.</p>
+        </div>
+        <div>
+          <h3>Тяжело в учении, легко в бою!</h3>
+          <p>Во время обучения было очень тяжело, практические занятия требовали учидчивости и гибкости ума. Однако, по прошествии времени, понял, что все жто было не зря! Устроился в ведущую студию своего города сразу после выпуска, а проработав там три года основал свою собственную!</p>
+        </div>
         <a href="">Показать все</a>
       </section>
       <section class="feedback">
         <h2>Обратная связь</h2>
-        <form action="">
-          <label for="">ФИО:<input type="text"></label>
-          <label for="">Возраст:<input type="text"></label>
-          <label for=""><input type="radio" name="gender" id="">Мужской</label>
-          <label for=""><input type="radio" name="gender" id="">Женский</label>
-          <label for="">Вопрос:<input type="text"></label>
+        <form>
+          <label for="">ФИО:
+            <input type="text" placeholder="Представьтесь, пожалуйста"></label>
+          <label for="">Возраст:
+            <input type="number" mi="0" max="100" placeholder="Укажите возраст, хотя бы приблизительно">
+          </label>
+          Пол:<label for="">
+            <input type="radio" name="gender" checked>Мужской
+          </label>
+          <label for="">
+            <input type="radio" name="gender">Женский
+          </label>
+          Вопрос:<textarea rows="4" cols="10" placeholder="Сообщите все, что считаете нужным"></textarea>
           <input type="submit" value="Отправить">
         </form>
         <div>
           <h3>Заинтересовались обучением на нашей кафедре?</h3>
           <p>Зполните короткую формуобратной связи и отправьте нам.</p>
           <p>Мы подготовили для вас индивидуальное предложение и выйдем на связь!</p>
-          <p><strong>Внимание!</strong> Все поля обязательны для заполнения</p>
+          <p><strong>Внимание!</strong> Все поля обязательны для заполнения.</p>
         </div>
       </section>
     </main>
@@ -102,11 +118,12 @@
             </ul>
           </li>
         </ul>
-        <p>
-          <a href=""></a>
-          <a href=""></a>
-          <a href=""></a>
-        </p>
+        <span>Подписчикам в соц. сетях - скидки на обучение!</span>
+        <div>
+          <a href="https://vk.com/"></a>
+          <a href="https://www.facebook.com/"></a>
+          <a href="https://twitter.com"></a>
+        </div>
       </div>
     </footer>
   </div>
