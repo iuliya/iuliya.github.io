@@ -1,0 +1,174 @@
+.page-header {
+  padding: 66px;
+  padding-left: 107px;
+  background-image: url("../img/bg-inner-header.png");
+}
+
+.page-header .logo-header{
+  float: left;
+  margin-right: 118px;
+  margin-bottom: 102px;
+}
+
+.page-header .header-menu {
+  float: left;
+  padding-top: 22px;
+}
+
+.page-header .header-menu li {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.page-header .breadcrumbs {
+  clear: both;
+}
+
+.page-header .breadcrumbs h2 {
+  line-height: 48px;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.page-header .breadcrumbs li {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+
+.page-header .breadcrumbs a {
+  display: inline-block;
+  position: relative;
+  padding-right: 49px;
+}
+
+.page-header .breadcrumbs a:before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin: 0 16px;
+  margin-top: -2px;
+  background-image: url(../img/header-nav-arrow.png);
+}
+
+.main-block {
+  padding-top: 88px;
+  padding-bottom: 81px;
+  padding-left: 109px;
+  padding-right: 118px;
+  
+  color: #404040;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.main-block h2{
+  color: black;
+  line-height: 48px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.content-left-column {
+  float: left;
+  width: 300px;
+  clear: right;
+}
+
+.content-right-column {
+  float: right;
+  width: 670px;
+}
+
+.first-row .content-right-column {
+  margin-bottom: 64px;
+}
+
+hr {
+  float: right;
+  width: 670px;
+  margin-bottom: 64px;
+}
+
+.first-row::after,
+.second-row::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.courses ul {
+  margin-top: 30px;
+}
+
+.courses li {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  padding-bottom: 35px;
+  
+  color: black;
+  line-height: 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.courses li::after {
+  content: '';
+  display: block;
+  width: 25px;
+  border-top: 2px solid #00b770;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -18px;
+}
+
+.courses a {
+  color: #3366cc;
+  text-decoration: underline;
+}
+
+.schedule span {
+  display: block;
+  border-left: 2px solid #00b770;
+  padding-left: 35px;
+  margin: 35px 0;
+  
+  color: black;
+  line-height: 24px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.schedule table{
+  width: 670px;
+  margin-top: 25px;
+  border-collapse: collapse;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.schedule th,
+.schedule td {
+  text-align: left;
+  padding: 18px 0;
+  padding-left: 20px;
+  border: 1px solid #d3d2d2;
+}
+
+.schedule th {
+  color: black;
+  background-color: #efefef;
+}
+

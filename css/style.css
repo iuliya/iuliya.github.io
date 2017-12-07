@@ -1,0 +1,98 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  background-image: url("../img/bg-index-header.png");
+}
+
+.page-footer {
+  padding-top: 92px;
+  padding-bottom: 51px;
+  padding-left: 109px;
+  padding-right: 115px;
+  
+  background-color: #1f2022;
+  color: white;
+  line-height: 24px;
+  font-size: 18px;
+}
+
+.page-footer::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.footer-left-column {
+  float: left;
+}
+
+.footer-right-column {
+  float: right;
+}
+
+.logo-footer {
+  display: block;
+  margin-bottom: 87px;
+}
+
+.copyright {
+  margin-top: 30px;
+}
+
+.footer-menu-title {
+  float: left;
+  margin-right: 48px;
+  margin-top: 21px;
+}
+
+.footer-menu-title:last-child {
+  float: right;
+  margin-right: 0;
+  margin-left: 23px;
+}
+
+.footer-menu-title ul {
+  margin-top: 38px;
+}
+
+.footer-menu-title a {
+  color: #fecd08;
+}
+
+.footer-menu-title ul li{
+  margin-bottom: 30px;
+}
+
+.social-buttons span {
+  margin-right: 33px;
+}
+
+.social-buttons a {
+  display: inline-block;
+  margin-left: 28px;
+  color: transparent;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-vk {
+  width: 36px;
+  height: 24px;
+  background-image: url(../img/icon-vk.png);
+}
+
+.btn-facebook {
+  width: 23px;
+  height: 35px;
+  background-image: url(../img/icon-fb.png);
+}
+
+.btn-twitter {
+  width: 36px;
+  height: 30px;
+  background-image: url(../img/icon-tw.png);
+}
