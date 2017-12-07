@@ -21,6 +21,15 @@
   font-size: 18px;
 }
 
+.page-header .header-menu a:hover {
+  text-decoration: underline;
+}
+
+.page-header .header-menu a:active {
+  text-decoration: none;
+  opacity: 0.3;
+}
+
 /*.page-header .header-menu li {
   display: inline-block;
   line-height: 24px;
@@ -53,7 +62,16 @@
   padding-right: 49px;
 }
 
-.page-header .breadcrumbs a:before {
+
+.page-header .breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.page-header .breadcrumbs a:active {
+  opacity: 0.3;
+}
+
+.page-header .breadcrumbs a::before {
   content: '';
   display: block;
   width: 17px;
@@ -143,6 +161,14 @@ hr {
 .courses a {
   color: #3366cc;
   text-decoration: underline;
+}
+
+.courses a:hover {
+  color: #00b770;
+}
+
+.courses a:active {
+  opacity: 0.3;
 }
 
 .schedule span {
