@@ -13,13 +13,19 @@
 .page-header .header-menu {
   float: left;
   padding-top: 22px;
+  text-align: justify;
 }
 
-.page-header .header-menu li {
-  display: inline-block;
+.page-header .header-menu a {
   line-height: 24px;
   font-size: 18px;
 }
+
+/*.page-header .header-menu li {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 18px;
+}*/
 
 .page-header .breadcrumbs {
   clear: both;
