@@ -1,135 +1,100 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>A-plus</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Автомастерская - Аллё, гараж.</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="css/style1.css">
 </head>
 <body>
-  <div class="container">
-    <header  class="page-headedr">
-      <div class="top">
-        <a href="#" class="logo-header">
-          <img src="img/logo-header.png" alt="Логотип">
-        </a>
-      <nav>
-        <ul>
-          <li><a href="inner.html">Программа обучения</a></li>
-          <li><a href="">Выпускники</a></li>
-          <li><a href="">Как поступить</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </nav>
-      </div>
-      <div class="bottom">
-        <h2>Учеба еще никогда не была такой интересной!</h2>
-        <p>Обучаем готовых к трудоутройству специалистов на теоретических и практических курсах.</p>
-        <button>Подать заявку</button>
-      </div>
-    </header>
-    
-    <main class="main-block">
-      <section class="features">
-        <div class="features-item1">
-          <h3>Гибкий график обучения</h3>
-          <p>Современный темп жизни требует гибкого подхода к расписанию.</p>
-        </div>
-        <div class="features-item2">
-          <h3>Практические занятия</h3>
-          <p>На одной теории далеко не уедешь, поэтому мы обучаем на практике.</p>
-        </div>
-        <div class="features-item3">
-          <h3>Не оставим без работы</h3>
-          <p>Хорошие специалисты всегда в цене и Вы станете именно таким.</p>
-        </div>
-      </section>
-      <section class="comments">
-        <h2>Отзывы выпускников</h2>
-        <div>
-         <img src="img/photo.png" alt="Фото">
-          <h3>Иванов Петр Сергеевич</h3>
-          <p>Группа: 04-И-15<br/> Выпуск: 2009 г.</p>
-        </div>
-        <div>
-          <h3>Тяжело в учении, легко в бою!</h3>
-          <p>Во время обучения было очень тяжело, практические занятия требовали учидчивости и гибкости ума. Однако, по прошествии времени, понял, что все жто было не зря! Устроился в ведущую студию своего города сразу после выпуска, а проработав там три года основал свою собственную!</p>
-        </div>
-        <a href="">Показать все</a>
-      </section>
-      <section class="feedback">
-        <h2>Обратная связь</h2>
-        <form>
-          <label for="">ФИО:
-            <input type="text" placeholder="Представьтесь, пожалуйста"></label>
-          <label for="">Возраст:
-            <input type="number" mi="0" max="100" placeholder="Укажите возраст, хотя бы приблизительно">
-          </label>
-          Пол:<label for="">
-            <input type="radio" name="gender" checked>Мужской
-          </label>
-          <label for="">
-            <input type="radio" name="gender">Женский
-          </label>
-          Вопрос:<textarea rows="4" cols="10" placeholder="Сообщите все, что считаете нужным"></textarea>
-          <input type="submit" value="Отправить">
-        </form>
-        <div>
-          <h3>Заинтересовались обучением на нашей кафедре?</h3>
-          <p>Зполните короткую формуобратной связи и отправьте нам.</p>
-          <p>Мы подготовили для вас индивидуальное предложение и выйдем на связь!</p>
-          <p><strong>Внимание!</strong> Все поля обязательны для заполнения.</p>
-        </div>
-      </section>
-    </main>
-    
-    <footer class="page-footer">
-      <div class="footer-left-column">
-        <a href="index.html" class="logo-footer">
-          <img src="img/logo-footer.png" alt="Логотип">
-        </a>
-        <p>197101, г. Санкт-Петербург,<br/> пр. Кронверкский, д. 49</p>
-        <p class="copyright">Все права защищены 	&copy; 2015</p>
-      </div>
-      <div class="footer-right-column">
-        <ul class="footer-menu">
-          <li class="footer-menu-title">Обучение
-            <ul>
-              <li><a href="#">Расписание</a></li>
-              <li><a href="#">Предметы</a></li>
-              <li><a href="#">Практика</a></li>
-            </ul>
-          </li>
-          <li class="footer-menu-title">Выпускники
-            <ul>
-              <li><a href="#">Достижения</a></li>
-              <li><a href="#">Отзывы</a></li>
-              <li><a href="#">Найти</a></li>
-            </ul>
-          </li>
-          <li class="footer-menu-title">Как поступить
-            <ul>
-              <li><a href="#">На коммерцию</a></li>
-              <li><a href="#">Целевой набор</a></li>
-              <li><a href="#">На бюджет</a></li>
-            </ul>
-          </li>
-          <li class="footer-menu-title">Контакты
-            <ul>
-              <li><a href="#">Обратная связь</a></li>
-              <li><a href="#">Схема проезда</a></li>
-              <li><a href="#">Телефон/факс</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="social-buttons">
-          <span>Подписчикам в соц. сетях - скидки на обучение!</span>
-          <a href="https://vk.com/" class="btn-vk">Вк</a>
-          <a href="https://www.facebook.com/" class="btn-facebook">Fb</a>
-          <a href="https://twitter.com" class="btn-twitter">Tw</a>
-        </div>
-      </div>
+  <div class="wrapper">
+    <header class="page-header">
+		<h1 class="main-title">Аллё, гараж</h1>
+		<nav>
+			<ul class="main-menu">
+				<li><a href="#company">О компании</a></li>
+				<li><a href="#prices">Услуги и цены</a></li>
+				<li><a href="#galary">Галерея</a></li>
+				<li><a href="#contacts">Контакты</a></li>
+			</ul>
+		</nav>
+	</header>
+	<hr>
+    <main class="content">
+		<section class="content-item company" id="company">
+			<h2 class="content-title">О компании</h2>
+			<p>Мы предлагаем качественные услуги покраски и восстановления внешнего вида вашего автомобиля 
+				по доступным ценам. Выполняем дизайн любой сложности. В работе используем автомобильные краски 
+				таких фирм как Dolce&Gabbana, Channel, Dior, Valentino. Здесь вы найдете только необходимую и 
+				достоверную информацию по услугам и ценам.
+			</p>
+		</section>
+		<section class="content-item prices" id="prices">
+			<h2 class="content-title">Услуги и цены</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Вид работ</th>
+						<th>Описание</th>
+						<th>Стоимость</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Устранение микроцарапин</td>
+						<td>Подробное описание</td>
+						<td>1000 руб</td>
+					</tr>
+					<tr>
+						<td>Защитное покрытие</td>
+						<td>Подробное описание</td>
+						<td>1001 руб</td>
+					</tr>
+					<tr>
+						<td>Покраска с рисунком</td>
+						<td>Подробное описание</td>
+						<td>1002 руб</td>
+					</tr>
+					<tr>
+						<td>Локальная покраска</td>
+						<td>Подробное описание</td>
+						<td>1003 руб</td>
+					</tr>
+					<tr>
+						<td>Полировка</td>
+						<td>Подробное описание</td>
+						<td>1004 руб</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section class="content-item galary" id="galary">
+			<h2 class="content-title">Галерея</h2>
+			<p>Здесь должен быть слайдер.</p>
+			<img src="img/cosySec 1.png" alt="">
+			<img src="img/cosySec 2.png" alt="">
+			<img src="img/cosySec 3.png" alt="">
+			<img src="img/cosySec 4.png" alt="">
+			<img src="img/cosySec 5.png" alt="">
+		</section>
+	</main>
+	<hr>
+    <footer class="page-footer" id="contacts">
+		<div class="page-footer--contacts">
+			<h2 class="footer-title">Контакты</h2>
+			<p>Мы находимся по адресу:<br>
+			г. Екатеринбург, ул.&nbsp;Блюхера,&nbsp;11<br>
+			Центральный вход с колоннами
+			<p>Тел. <a href="tel:+79120389487">79120389487</a><br>
+			Почта <a href="mailto:svalukhina-yua@ural.rt.ru">svalukhina-yua@ural.rt.ru</a>
+			</p>
+		</div>
+		<div class="page-footer--map">
+			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae09f2701768be1b4cdcdb152abfae1bea2050320504b40f31a9ad1f75872f8fc&amp;width=100%25&amp;height=250&amp;lang=ru_RU&amp;scroll=true"></script>
+		</div>
     </footer>
-  </div>
+  </div>  
 </body>
 </html>
