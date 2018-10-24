@@ -1,131 +1,142 @@
-.container {
-  width: 1200px;
-  margin: 0 auto;
+/*--reset settings--*/
+h1, h2, ul, body{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style: none;
+}
+/*------------------*/
+
+@font-face{
+    font-family: Pasifico;
+    src: url("../fonts/Pacifico-Regular.ttf");
+    font-style: normal;
+    font-weight: 400;
 }
 
-.page-header {
-  background-image: url("../img/bg-index-header.png");
+body{
+    font-family: 'Open Sans', sans-serif;
+    color:black;
 }
 
-.page-footer {
-  padding-top: 92px;
-  padding-bottom: 51px;
-  padding-left: 109px;
-  padding-right: 115px;
-  
-  background-color: #1f2022;
-  color: white;
-  line-height: 24px;
-  font-size: 18px;
+.wrapper{
+    max-width: 900px;
+    min-width: 680px;
+    margin: 0 auto;
+    /* padding: 20px 40px; */
+    /* background-color: rgba(0, 0, 0, .2); */
 }
 
+hr {
+    margin:0 25px;
+    border: 1px dotted black;
+}
+.page-header::after,
 .page-footer::after{
-  content: '';
-  display: table;
-  clear: both;
+    content:'';
+    display: block;
+    clear: both;
 }
 
-.footer-left-column {
-  float: left;
+.page-header{
+    /* padding: 11px 40px; */
+    padding: 1% 4%;
+    /* background-color: rgba(0, 0, 0, .1); */
 }
 
-.footer-right-column {
-  float: right;
+.page-footer{
+    /* padding: 20px 40px; */
+    padding: 0 3%;
+    /* background-color: rgba(0, 0, 0, .2); */
 }
 
-.logo-footer {
-  display: block;
-  margin-bottom: 87px;
+.page-footer--contacts{
+    float: left;
+    width: 40%;
+    margin-top: 4%;
+    /* margin-left: 5%; */
 }
 
-.copyright {
-  margin-top: 30px;
+.page-footer--map {
+    float: right;
+    width: 55%;
+    margin: 10px 0;
+    /* margin-right: 5%; */
 }
 
-.footer-menu-title {
-  float: left;
-  margin-right: 48px;
-  margin-top: 21px;
+.main-title {
+    float: left;
+    /* padding: 11px 0;
+    margin-left: 30px; */
+    font-family: Pasifico, cursive; 
 }
 
-.footer-menu-title:last-child {
-  float: right;
-  margin-right: 0;
-  margin-left: 23px;
+.footer-title {
+    padding-left: 13%;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.footer-menu-title ul {
-  margin-top: 38px;
+.main-menu{
+    float: right;
+    padding: 14px 0;
 }
 
-.footer-menu-title a {
-  color: #fecd08;
+.main-menu li{
+    display: inline-block;
+    padding: 10px 0;
+    padding-left: 10px;
 }
 
-.footer-menu-title a:hover {
- text-decoration: underline;
+.main-menu li a{
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.footer-menu-title a:active {
-  text-decoration: none;
-  opacity: 0.3;
+.content {
+    padding: 20px 40px;
+    /* border: 1px dotted black;
+    border-left: none;
+    border-right: none; */
 }
 
-.footer-menu-title ul li{
-  margin-bottom: 30px;
+.content-item {
+    margin-bottom: 20px;
 }
 
-.social-buttons span {
-  margin-right: 33px;
+.content-title{
+    padding-left: 30px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 500;
 }
 
-.social-buttons a {
-  display: inline-block;
-  margin-left: 28px;
-  color: transparent;
-  vertical-align: middle;
-  background-repeat: no-repeat;
-  background-position: center;
+.services{
+
 }
 
-.btn-vk {
-  width: 36px;
-  height: 24px;
-  background-image: url(../img/icon-vk.png);
+.prices table{
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.btn-vk:hover {
-  background-image: url(../img/icon-vk--hover.png)
+th, td {
+    text-align: left;
+    padding: 5px 0;
+    padding-left: 5px;
+    border: 1px solid black;
 }
 
-.btn-vk:active {
-  background-image: url(../img/icon-vk--active.png)
+.galary{
+    max-height: 235px;
+    overflow: hidden;
 }
 
-.btn-facebook {
-  width: 23px;
-  height: 35px;
-  background-image: url(../img/icon-fb.png);
-}
-
-.btn-facebook:hover {
-  background-image: url(../img/icon-fb--hover.png)
-}
-
-.btn-facebook:active {
-  background-image: url(../img/icon-fb--active.png)
-}
-
-.btn-twitter {
-  width: 36px;
-  height: 30px;
-  background-image: url(../img/icon-tw.png);
-}
-
-.btn-twitter:hover {
-  background-image: url(../img/icon-tw--hover.png)
-}
-
-.btn-twitter:active {
-  background-image: url(../img/icon-tw--active.png)
+.galary img{
+    width: 270px;
+    height: 150px;
 }
