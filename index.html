@@ -1,101 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Автомастерская - Аллё, гараж.</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&amp;subset=cyrillic" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico&amp;subset=cyrillic" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="wrapper">
-    <header class="page-header">
-		<h1 class="main-title">Аллё, гараж</h1>
-		<nav>
-			<ul class="main-menu">
-				<li><a href="#company">О компании</a></li>
-				<li><a href="#prices">Услуги и цены</a></li>
-				<li><a href="#galary">Галерея</a></li>
-				<li><a href="#contacts">Контакты</a></li>
-			</ul>
-		</nav>
-	</header>
-	<hr>
-    <main class="content">
-		<section class="content-item company" id="company">
-			<h2 class="content-title">О компании</h2>
-			<p>Мы предлагаем качественные услуги покраски и восстановления внешнего вида вашего автомобиля 
-				по доступным ценам. Выполняем дизайн любой сложности. В работе используем автомобильные краски 
-				таких фирм как Dolce&Gabbana, Channel, Dior, Valentino. Здесь вы найдете только необходимую и 
-				достоверную информацию по услугам и ценам.
-			</p>
-		</section>
-		<section class="content-item prices" id="prices">
-			<h2 class="content-title">Услуги и цены</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Вид работ</th>
-						<th>Описание</th>
-						<th>Стоимость</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Устранение микроцарапин</td>
-						<td>Подробное описание</td>
-						<td>1000 руб</td>
-					</tr>
-					<tr>
-						<td>Защитное покрытие</td>
-						<td>Подробное описание</td>
-						<td>1001 руб</td>
-					</tr>
-					<tr>
-						<td>Покраска с рисунком</td>
-						<td>Подробное описание</td>
-						<td>1002 руб</td>
-					</tr>
-					<tr>
-						<td>Локальная покраска</td>
-						<td>Подробное описание</td>
-						<td>1003 руб</td>
-					</tr>
-					<tr>
-						<td>Полировка</td>
-						<td>Подробное описание</td>
-						<td>1004 руб</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-		<section class="content-item galary" id="galary">
-			<h2 class="content-title">Галерея</h2>
-			<p>Здесь должен быть слайдер.</p>
-			<img src="img/cosySec 1.png" alt="">
-			<img src="img/cosySec 2.png" alt="">
-			<img src="img/cosySec 3.png" alt="">
-			<img src="img/cosySec 4.png" alt="">
-			<img src="img/cosySec 5.png" alt="">
-		</section>
-	</main>
-	<hr>
-    <footer class="page-footer" id="contacts">
-		<div class="page-footer--contacts">
-			<h2 class="footer-title">Контакты</h2>
-			<p>Мы находимся по адресу:<br>
-			г. Екатеринбург, ул.&nbsp;Блюхера,&nbsp;11<br>
-			Центральный вход с колоннами
-			<p>Тел. <a href="tel:+79120389487">79120389487</a><br>
-			Почта <a href="mailto:svalukhina-yua@ural.rt.ru">svalukhina-yua@ural.rt.ru</a>
-			</p>
-		</div>
-		<div class="page-footer--map">
-			<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae09f2701768be1b4cdcdb152abfae1bea2050320504b40f31a9ad1f75872f8fc&amp;width=100%25&amp;height=250&amp;lang=ru_RU&amp;scroll=true"></script>
-		</div>
-    </footer>
-  </div>  
-</body>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SKB Kontur test task</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!--[if IE]>
+            <style>
+                    .btn-result:after {
+                        position: absolute;
+                        content:'';
+                        display: block;
+                        border: 12.4px solid #45a118;
+                        top: 6.5px;
+                        right: -12px;
+                        -ms-transform: rotate(52deg) skewX(15.999999deg);
+                        border-radius: 2px;
+                        box-shadow: 0.8px 0px #4a803c, 0px -0.8px #4a803c;
+                        z-index: 1;
+                    }
+            </style>
+        <![endif]-->
+        <style>
+            .btn-result:after {
+                position: absolute;
+                content:'';
+                display: block;
+                border: 12.7px solid #45a118;
+                top: 7px;
+                right: -11px;
+                -ms-transform: rotate(53deg) skewX(18deg);
+                -webkit-transform: rotate(53deg) skewX(18deg);
+                transform: rotate(53deg) skewX(18deg);
+                border-radius: 2px;
+                box-shadow: 0.9px 0px #4a803c, 0px -0.9px #4a803c;
+            }
+        </style>
+    </head>
+    <body>
+        <form class = "container">
+            <div class="control-panel">
+                <button type="button" class="btn btn-result" onclick="multipleMatrix()" tabindex="1">Умножить матрицы</button>
+                <button type="reset" class="btn btn-clear_matrix" tabindex="2"><i class="icon icon-glyph-1"></i>Очистить матрицы</button>
+                <button type="button" class="btn btn-change_matrix" onclick = "handlerChangeMatrix()" tabindex="3">
+                    <i class="icon icon-glyph-2"></i>Поменять матрицы местами
+                </button>
+                <div class="controls">
+                    <input type="radio" name="choice_matrix" id="controls1" value ="A" >
+                    <label for="controls1"><i class="toggle" tabindex="4"></i>Матрица А</label>
+                    <input type="radio" name="choice_matrix" id="controls2" value ="B" checked>
+                    <label for="controls2"><i class="toggle" tabindex="5"></i>Матрица В</label>
+                </div>
+                <button type="button" class="btn btn-add_row"><i class="icon icon-glyph"></i>Добавить</button>
+                <button type="button" class="btn btn-del_row"><i class="icon icon-glyph-3"></i>Удалить</button>
+                <span>строку</span>
+                <button type="button" class="btn btn-add_column"><i class="icon icon-glyph"></i>Добавить</button>
+                <button type="button" class="btn btn-del_column"><i class="icon icon-glyph-3"></i>Удалить</button>
+                <span>столбец</span>
+                <p class = "error">
+                    Такие матрицы нельзя перемножить, так как количество столбцов матрицы <span class="first">А</span>
+                    не равно количеству строк матрицы <span class="second">В</span>.
+                </p>
+            </div>
+            <div class="board">
+                <div class="matrix matrixC">
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="c1,1" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c1,2" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c1,3" class="matrix-cell" disabled="disabled">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="c2,1" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c2,2" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c2,3" class="matrix-cell" disabled="disabled">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="c3,1" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c3,2" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c3,3" class="matrix-cell" disabled="disabled">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="c4,1" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c4,2" class="matrix-cell" disabled="disabled">
+                        <input type="text" placeholder="c4,3" class="matrix-cell" disabled="disabled">
+                    </div>
+                </div>
+                <div class="matrix matrixA">
+                    <span class="letter first-matrix">A</span>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="a1,1" class="matrix-cell">
+                        <input type="text" placeholder="a1,2" class="matrix-cell">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="a2,1" class="matrix-cell">
+                        <input type="text" placeholder="a2,2" class="matrix-cell">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="a3,1" class="matrix-cell">
+                        <input type="text" placeholder="a3,2" class="matrix-cell">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="a4,1" class="matrix-cell">
+                        <input type="text" placeholder="a4,2" class="matrix-cell">
+                    </div>
+                </div>
+                <div class="matrix matrixB second-multiple">
+                    <span class="letter second-matrix">B</span>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="b1,1" class="matrix-cell">
+                        <input type="text" placeholder="b1,2" class="matrix-cell">
+                        <input type="text" placeholder="b1,3" class="matrix-cell">
+                    </div>
+                    <div class= "matrix-row">
+                        <input type="text" placeholder="b2,1" class="matrix-cell">
+                        <input type="text" placeholder="b2,2" class="matrix-cell">
+                        <input type="text" placeholder="b2,3" class="matrix-cell">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <script src="js/scripts.js"></script>
+        <script src="js/classList.min.js"></script>
+    </body>
 </html>
