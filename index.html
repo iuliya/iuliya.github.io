@@ -1,126 +1,43 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>SKB Kontur test task</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <!--[if IE]>
-            <style>
-                    .btn-result:after {
-                        position: absolute;
-                        content:'';
-                        display: block;
-                        border: 12.4px solid #45a118;
-                        top: 6.5px;
-                        right: -12px;
-                        -ms-transform: rotate(52deg) skewX(15.999999deg);
-                        border-radius: 2px;
-                        box-shadow: 0.8px 0px #4a803c, 0px -0.8px #4a803c;
-                        z-index: 1;
-                    }
-            </style>
-        <![endif]-->
-        <style>
-            .btn-result:after {
-                position: absolute;
-                content:'';
-                display: block;
-                border: 12.7px solid #45a118;
-                top: 7px;
-                right: -11px;
-                -ms-transform: rotate(53deg) skewX(18deg);
-                -webkit-transform: rotate(53deg) skewX(18deg);
-                transform: rotate(53deg) skewX(18deg);
-                border-radius: 2px;
-                box-shadow: 0.9px 0px #4a803c, 0px -0.9px #4a803c;
-            }
-        </style>
-    </head>
-    <body>
-        <form class = "container">
-            <div class="control-panel">
-                <button type="button" class="btn btn-result" onclick="multipleMatrix()" tabindex="1">Умножить матрицы</button>
-                <button type="reset" class="btn btn-clear_matrix" tabindex="2"><i class="icon icon-glyph-1"></i>Очистить матрицы</button>
-                <button type="button" class="btn btn-change_matrix" onclick = "handlerChangeMatrix()" tabindex="3">
-                    <i class="icon icon-glyph-2"></i>Поменять матрицы местами
-                </button>
-                <div class="controls">
-                    <input type="radio" name="choice_matrix" id="controls1" value ="A" >
-                    <label for="controls1"><i class="toggle" tabindex="4"></i>Матрица А</label>
-                    <input type="radio" name="choice_matrix" id="controls2" value ="B" checked>
-                    <label for="controls2"><i class="toggle" tabindex="5"></i>Матрица В</label>
-                </div>
-                <button type="button" class="btn btn-add_row"><i class="icon icon-glyph"></i>Добавить</button>
-                <button type="button" class="btn btn-del_row"><i class="icon icon-glyph-3"></i>Удалить</button>
-                <span>строку</span>
-                <button type="button" class="btn btn-add_column"><i class="icon icon-glyph"></i>Добавить</button>
-                <button type="button" class="btn btn-del_column"><i class="icon icon-glyph-3"></i>Удалить</button>
-                <span>столбец</span>
-                <p class = "error">
-                    Такие матрицы нельзя перемножить, так как количество столбцов матрицы <span class="first">А</span>
-                    не равно количеству строк матрицы <span class="second">В</span>.
-                </p>
-            </div>
-            <div class="board">
-                <div class="matrix matrixC">
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="c1,1" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c1,2" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c1,3" class="matrix-cell" disabled="disabled">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="c2,1" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c2,2" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c2,3" class="matrix-cell" disabled="disabled">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="c3,1" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c3,2" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c3,3" class="matrix-cell" disabled="disabled">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="c4,1" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c4,2" class="matrix-cell" disabled="disabled">
-                        <input type="text" placeholder="c4,3" class="matrix-cell" disabled="disabled">
-                    </div>
-                </div>
-                <div class="matrix matrixA">
-                    <span class="letter first-matrix">A</span>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="a1,1" class="matrix-cell">
-                        <input type="text" placeholder="a1,2" class="matrix-cell">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="a2,1" class="matrix-cell">
-                        <input type="text" placeholder="a2,2" class="matrix-cell">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="a3,1" class="matrix-cell">
-                        <input type="text" placeholder="a3,2" class="matrix-cell">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="a4,1" class="matrix-cell">
-                        <input type="text" placeholder="a4,2" class="matrix-cell">
-                    </div>
-                </div>
-                <div class="matrix matrixB second-multiple">
-                    <span class="letter second-matrix">B</span>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="b1,1" class="matrix-cell">
-                        <input type="text" placeholder="b1,2" class="matrix-cell">
-                        <input type="text" placeholder="b1,3" class="matrix-cell">
-                    </div>
-                    <div class= "matrix-row">
-                        <input type="text" placeholder="b2,1" class="matrix-cell">
-                        <input type="text" placeholder="b2,2" class="matrix-cell">
-                        <input type="text" placeholder="b2,3" class="matrix-cell">
-                    </div>
-                </div>
-            </div>
-        </form>
-
-        <script src="js/scripts.js"></script>
-        <script src="js/classList.min.js"></script>
-    </body>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Test task</title>
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="top">
+		<div class="left" id="control_panel">
+			<div class="left-item">
+				<span class="item-title">Размер матрицы:</span>
+				<label>N строк <input type="number" min="1" max="40" id="rows"></label>
+				&times;
+				<label>M стобцов <input type="number" min="1" max="40" id="cols"></label>
+				<button id="btn-render">Нарисовать</button>
+			</div>
+			<div class="left-item">
+				<span class="item-title">Заполнить матрицу:</span>
+				<label>вероятность единицы <input type="number" min="0.01" max="0.99" step="0.01" id="probability"></label>
+				<button id="btn-autofill">АВТО</button>
+			</div>
+			<div class="left-item">
+				<span class="item-title">Количество доменов: </span><input type="text" readonly id="numberofdomains">
+				<button id="btn-calculate">Посчитать домены</button>
+			</div>
+		</div>
+		<div class="right no_result" id="result">
+			<table class="table_result">
+				<thead>
+					<th>Вероятность</th>
+					<th>Количество доменов в матрице</th>
+					<th>Количество ячеек в матрице (N*M)</th>
+				</thead>
+				<tbody id="table_body"></tbody>
+			</table>
+		</div>
+	</div>
+	<div class="bottom" id="matrix"></div>
+	<script src="script.js"></script>
+</body>
 </html>
