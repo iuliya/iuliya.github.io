@@ -3,27 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Test task</title>
-	<link rel="stylesheet" href="normalize.css">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="top">
-		<div class="left" id="control_panel">
+		<div class="left" id="controlPanel">
 			<div class="left-item">
 				<span class="item-title">Размер матрицы:</span>
 				<label>N строк <input type="number" min="1" max="40" id="rows"></label>
 				&times;
 				<label>M стобцов <input type="number" min="1" max="40" id="cols"></label>
-				<button id="btn-render">Нарисовать</button>
+				<button id="btnRender">Отобразить</button>
 			</div>
 			<div class="left-item">
 				<span class="item-title">Заполнить матрицу:</span>
 				<label>вероятность единицы <input type="number" min="0.01" max="0.99" step="0.01" id="probability"></label>
-				<button id="btn-autofill">АВТО</button>
+				<button id="btnAutofill">АВТО</button>
 			</div>
 			<div class="left-item">
-				<span class="item-title">Количество доменов: </span><input type="text" readonly id="numberofdomains">
-				<button id="btn-calculate">Посчитать домены</button>
+				<span class="item-title">Количество доменов: </span><input type="text" readonly id="numberOfDomains">
+				<button id="btnCalculate">Посчитать домены</button>
 			</div>
 		</div>
 		<div class="right no_result" id="result">
