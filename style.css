@@ -39,7 +39,7 @@ body{
 
 .left-item a:hover,
 .left-item a:active, 
-.left-item a:visited, {
+.left-item a:visited {
 	color: grey;
 }
 
@@ -60,9 +60,6 @@ body{
 	margin-right: 5px;
 	margin-bottom: 5px;
 	border: 1px solid grey;
-}
-.is_error{
-	border-color: red !important;
 }
 .no_result{
 	display: none;
