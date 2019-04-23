@@ -30,6 +30,15 @@ body{
 .left-item button{
 	margin-left: 10px;
 }
+.left-item a{
+	text-transform: uppercase;
+	color: black;
+}
+.left-item a:hover,
+.left-item a:active, 
+.left-item a:visited, {
+	color: grey;
+}
 .item-title {
 	font-weight: bold;
 }
