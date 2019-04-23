@@ -33,13 +33,13 @@ body{
 	text-transform: uppercase;
 	color: black;
 }
-.left-item a::hover {
+.left-item a:hover {
 	text-decoration: none;
 }
 
-.left-item a::hover,
-.left-item a::active, 
-.left-item a::visited, {
+.left-item a:hover,
+.left-item a:active, 
+.left-item a:visited, {
 	color: grey;
 }
 
