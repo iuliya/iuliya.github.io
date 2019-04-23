@@ -15,7 +15,6 @@ body{
 }
 .left {
 	float:left;
-	--margin-right: 30px;
 }
 .right {
 	float: right;
@@ -34,9 +33,9 @@ body{
 	text-transform: uppercase;
 	color: black;
 }
-.left-item a:hover,
-.left-item a:active, 
-.left-item a:visited, {
+.left-item a::hover,
+.left-item a::active, 
+.left-item a::visited, {
 	color: grey;
 }
 .item-title {
